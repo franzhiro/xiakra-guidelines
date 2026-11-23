@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Xiakra brand and social guidelines: formats, logo, typography, colour, graphics and templates.">
+<meta name="description" content="Xiakra brand and social guidelines: formats, logo, typography, colour, graphics, Niru and templates.">
 <title>Xiakra Brand and Social Guidelines</title>
 <style>
 /* Deck layout: a stack of 16:9 slides on a near-black desk, brand-book rhythm
@@ -293,13 +293,14 @@ td.mono { font-size: 0.92em; white-space: nowrap; }
 .prog i.o { background: linear-gradient(90deg, var(--oxblood), var(--crimson)); }
 
 /* reels */
-.reels { display: grid; grid-template-columns: repeat(3, minmax(0, 0.62fr)) minmax(0, 1.3fr); gap: max(12px, calc(32 * var(--u))); align-items: start; }
-@container (max-width: 900px) { .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); } .reels .beats { grid-column: 1 / -1; } }
+.reels { display: grid; grid-template-columns: repeat(4, minmax(0, 0.5fr)) minmax(0, 1.2fr); gap: max(12px, calc(32 * var(--u))); align-items: start; }
+@container (max-width: 900px) { .reels { grid-template-columns: repeat(4, minmax(0, 1fr)); } .reels .beats { grid-column: 1 / -1; } }
 @container (max-width: 520px) { .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .reels video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; border-radius: max(8px, calc(16 * var(--u))); border: 1px solid rgba(246,236,238,0.1); background: var(--void); }
 
 /* checklist */
-.check { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: max(8px, calc(14 * var(--u))) max(12px, calc(28 * var(--u))); counter-reset: c; }
+.check { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: max(8px, calc(14 * var(--u))) max(12px, calc(24 * var(--u))); counter-reset: c; }
+@container (max-width: 1100px) { .check { grid-template-columns: 1fr 1fr; } }
 @container (max-width: 760px) { .check { grid-template-columns: 1fr; } }
 .check li { counter-increment: c; }
 .check label { display: grid; grid-template-columns: auto 1fr; gap: max(10px, calc(18 * var(--u))); align-items: start; padding: max(10px, calc(18 * var(--u))) max(12px, calc(22 * var(--u))); border-radius: max(10px, calc(16 * var(--u))); background: rgba(255,255,255,0.6); border: 1px solid rgba(23,18,26,0.1); cursor: pointer; font-size: max(13px, calc(22 * var(--u))); }
@@ -483,8 +484,9 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
       <a href="#s03"><b>03</b>Type</a>
       <a href="#s04"><b>04</b>Colour</a>
       <a href="#s05"><b>05</b>Graphics</a>
-      <a href="#s06"><b>06</b>Templates</a>
-      <a href="#s07"><b>07</b>Checklist</a>
+      <a href="#s06"><b>06</b>Niru</a>
+      <a href="#s07"><b>07</b>Templates</a>
+      <a href="#s08"><b>08</b>Checklist</a>
     </nav>
   </div>
 </header>
@@ -501,7 +503,7 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
     <svg class="lgbig" viewBox="0 0 118.63 30.78" role="img" aria-label="Xiakra"><use href="#lg-dark"/></svg>
     <div class="grow"></div>
     <h1 class="fs-hero" style="font-size:max(44px, calc(196 * var(--u)))">Brand<br>and Social<br>Guidelines</h1>
-    <div class="pills"><span class="pill-o" style="font-family:var(--mono);letter-spacing:0;color:var(--ivory);border-color:rgba(246,236,238,.3)">v1.1</span><span class="pill-o">Formats</span><span class="pill-o">Logo</span><span class="pill-o">Typography</span><span class="pill-o">Colour</span><span class="pill-o">Graphics</span><span class="pill-o">Templates</span></div>
+    <div class="pills"><span class="pill-o" style="font-family:var(--mono);letter-spacing:0;color:var(--ivory);border-color:rgba(246,236,238,.3)">v1.2</span><span class="pill-o">Formats</span><span class="pill-o">Logo</span><span class="pill-o">Typography</span><span class="pill-o">Colour</span><span class="pill-o">Graphics</span><span class="pill-o">Niru</span><span class="pill-o">Templates</span></div>
   </div>
 </section>
 
@@ -667,7 +669,7 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
         <div class="row"><div class="ex" style="background:#fff"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="transform:scale(1.35,.7)"><use href="#lg-light"/></svg></div><div class="tx"><i>02</i><b>Don't distort it</b>Never stretch, squash, skew or rotate.</div></div>
         <div class="row"><div class="ex" style="background:#fff;gap:6%"><svg viewBox="0 0 30.78 30.78" aria-hidden="true" style="width:16%;aspect-ratio:1"><use href="#mk-ox"/></svg><span style="font:600 max(15px, calc(40 * var(--u))) var(--sans);color:#17121A;letter-spacing:-.02em">Xiakra</span></div><div class="tx"><i>03</i><b>Don't rebuild it</b>Never retype the wordmark or move the mark.</div></div>
         <div class="row"><div class="ex" style="background:#100609"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="filter:drop-shadow(0 0 6px #DB5975) drop-shadow(0 0 14px #BF1946)"><use href="#lg-dark"/></svg></div><div class="tx"><i>04</i><b>Don't add effects</b>No glow, shadow, outline or blur on the logo.</div></div>
-        <div class="row"><div class="ex" style="background:url(img/C05-Proof.png) 30% 52%/220% no-repeat"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-dark"/></svg></div><div class="tx"><i>05</i><b>Don't use busy grounds</b>Keep it off UI, numbers and dense network.</div></div>
+        <div class="row"><div class="ex" style="background:url(img/C06-Proof.png) 30% 52%/220% no-repeat"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-dark"/></svg></div><div class="tx"><i>05</i><b>Don't use busy grounds</b>Keep it off UI, numbers and dense network.</div></div>
       </div>
     </div>
   </div>
@@ -855,31 +857,97 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
   </div>
 </section>
 
-<!-- ============ 06 OPENER ============ -->
-<section class="s ox op" id="s06" aria-label="Section 06 social templates">
+<!-- ============ 06 OPENER: NIRU ============ -->
+<section class="s ox op" id="s06" aria-label="Section 06 Niru">
   <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">06</div></div>
   <div class="in">
+    <h2>niru</h2>
+    <p>Xiakra's built-in assistant. People build, test and fix agents by chatting with Niru. On social, Niru appears only as the real chat, in the Xiakra palette.</p>
+  </div>
+</section>
+
+<!-- 06 meet Niru -->
+<section class="s" aria-label="Meet Niru">
+  <div class="in">
+    <div class="lab"><b>//06</b> meet Niru <span class="r">Figma › Agent Studio › Canvas › Ask Niru</span></div>
+    <div class="cols" style="--n:2;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;flex:1">
+      <div style="display:grid;gap:max(14px, calc(30 * var(--u)))">
+        <div class="story" style="grid-template-columns:minmax(0,.38fr) minmax(0,1fr)">
+          <div class="k" style="font-size:max(15px, calc(32 * var(--u)))">What it is</div><div class="v" style="font-size:max(14px, calc(26 * var(--u)))">The assistant inside Agent Studio. <i style="font-style:normal;color:var(--rose)">Ask Niru</i> on the canvas opens a chat that drafts agents, explains steps and says what is missing.</div>
+          <div class="k" style="font-size:max(15px, calc(32 * var(--u)))">Name</div><div class="v" style="font-size:max(14px, calc(26 * var(--u)))">Always "Niru". The action is "Ask Niru". Never NIRU, "the Niru", "Niru AI" or "Niru bot".</div>
+          <div class="k" style="font-size:max(15px, calc(32 * var(--u)))">Avatar</div><div class="v" style="font-size:max(14px, calc(26 * var(--u)))">A small burgundy Core in a Void disc with a Rose rim. Never the product's blue orb, a face or a character.</div>
+          <div class="k" style="font-size:max(15px, calc(32 * var(--u)))">Voice</div><div class="v" style="font-size:max(14px, calc(26 * var(--u)))">Plain sentences. Says what it did, then what is still needed. No emoji, no exclamation marks, no "as an AI".</div>
+        </div>
+      </div>
+      <div class="shots" style="--n:2;grid-template-columns:1fr .78fr;align-items:end">
+        <figure><img src="img/C03-Niru.png" alt="Ask Niru carousel slide" loading="lazy"><figcaption><b>C03 · Ask Niru</b>Entry button, then the panel</figcaption></figure>
+        <figure><img src="img/R4-poster.jpg" alt="Ask Niru reel frame" loading="lazy"><figcaption><b>R4 · Ask Niru reel</b>The reply streams in</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Niru in posts -->
+<section class="s" aria-label="Niru in posts">
+  <div class="in">
+    <div class="lab"><b>//06</b> Niru in posts <span class="r">Chat component · sizes in Figma px × scale s</span></div>
+    <div class="cols" style="--n:3;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr)">
+      <div class="tw"><table style="min-width:0">
+        <thead><tr><th>Part</th><th>Spec</th></tr></thead>
+        <tbody>
+          <tr><td>Panel</td><td class="mono">345·s wide · r 12 · #0F0608 · 1 px #3E282D</td></tr>
+          <tr><td>Niru bubble</td><td class="mono">#1D0C0F · r 16 · left, avatar 24·s</td></tr>
+          <tr><td>Your bubble</td><td class="mono">rgba(108,51,61,.5) · r 16 · right · 210·s</td></tr>
+          <tr><td>Text</td><td class="mono">400 · 12·s / 1.4 · white</td></tr>
+          <tr><td>Header</td><td class="mono">Niru 600 · 14·s · avatar 32·s</td></tr>
+          <tr><td>Composer</td><td class="mono">#1A1A1A · 1 px #353535 · r 16</td></tr>
+          <tr><td>Scale floor</td><td class="mono">s ≥ 1.85 (text ≥ 22 px)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="card"><h3 style="color:var(--mint)">Do</h3><ul class="ru fs-sm">
+        <li>Use real copy from the product's chat flows.</li>
+        <li>Show 1–3 messages: Niru, you, Niru.</li>
+        <li>Keep turn actions, chips and composer as in the console.</li>
+        <li>One panel per frame, on a dark ground.</li>
+        <li>In reels: type, send, thinking dots, then stream the reply.</li>
+      </ul></div>
+      <div class="card"><h3 style="color:#FF8AA3">Don't</h3><ul class="ru no fs-sm">
+        <li>Invent answers or results Niru can't produce.</li>
+        <li>Show personal names, emails or customer data.</li>
+        <li>Use the blue orb, blue or cyan glows.</li>
+        <li>Add bubble tails, emoji or cartoon styling.</li>
+        <li>Crop a message mid-sentence.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 OPENER ============ -->
+<section class="s ox op" id="s07" aria-label="Section 07 social templates">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">07</div></div>
+  <div class="in">
     <h2>social templates</h2>
-    <p>Six carousel slides, three formats and three reels. Swap the words and the proof; keep everything else.</p>
+    <p>Seven carousel slides, three formats and four reels. Swap the words and the proof; keep everything else.</p>
   </div>
 </section>
 
 <!-- 06 carousel -->
 <section class="s" aria-label="Carousel template">
   <div class="in">
-    <div class="lab"><b>//06</b> carousel <span class="r">4:5 · 6 slides · Agent Studio 101</span></div>
-    <div class="shots" style="--n:6">
+    <div class="lab"><b>//07</b> carousel <span class="r">4:5 · 7 slides · Agent Studio 101</span></div>
+    <div class="shots" style="--n:7">
       <figure><img src="img/C01-Cover.png" alt="C01 cover" loading="lazy"><figcaption><span class="id">C01</span><b>Cover</b>Display headline, Core, Trace.</figcaption></figure>
       <figure><img src="img/C02-Steps.png" alt="C02 steps" loading="lazy"><figcaption><span class="id">C02</span><b>Mechanism</b>H1, body, step list.</figcaption></figure>
-      <figure><img src="img/C03-Stages.png" alt="C03 stages on Oxblood" loading="lazy"><figcaption><span class="id">C03</span><b>Colour block</b>Oxblood ground, one per carousel.</figcaption></figure>
-      <figure><img src="img/C04-Tools.png" alt="C04 tools" loading="lazy"><figcaption><span class="id">C04</span><b>Detail</b>Up to 3 stacked cards.</figcaption></figure>
-      <figure><img src="img/C05-Proof.png" alt="C05 proof" loading="lazy"><figcaption><span class="id">C05</span><b>Proof</b>One stat, chips, Trace.</figcaption></figure>
-      <figure><img src="img/C06-CTA.png" alt="C06 call to action" loading="lazy"><figcaption><span class="id">C06</span><b>CTA</b>Centred: Core, H1, button.</figcaption></figure>
+      <figure><img src="img/C03-Niru.png" alt="C03 Ask Niru" loading="lazy"><figcaption><span class="id">C03</span><b>Ask Niru</b>Button, then the chat panel.</figcaption></figure>
+      <figure><img src="img/C04-Stages.png" alt="C04 stages on Oxblood" loading="lazy"><figcaption><span class="id">C04</span><b>Colour block</b>Oxblood, one per carousel.</figcaption></figure>
+      <figure><img src="img/C05-Tools.png" alt="C05 tools" loading="lazy"><figcaption><span class="id">C05</span><b>Detail</b>Up to 3 stacked cards.</figcaption></figure>
+      <figure><img src="img/C06-Proof.png" alt="C06 proof" loading="lazy"><figcaption><span class="id">C06</span><b>Proof</b>One stat, chips, Trace.</figcaption></figure>
+      <figure><img src="img/C07-CTA.png" alt="C07 call to action" loading="lazy"><figcaption><span class="id">C07</span><b>CTA</b>Centred: Core, H1, button.</figcaption></figure>
     </div>
     <div class="cols fs-sm" style="--n:3">
-      <div><div class="cap acc" style="margin-bottom:.6em">Sequence</div>Hook → mechanism → colour block → detail → proof → CTA. 3–10 slides allowed; 6 is standard.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Sequence</div>Hook → mechanism → Niru → colour block → detail → proof → CTA. 3–10 slides allowed; the master has 7.</div>
       <div><div class="cap acc" style="margin-bottom:.6em">Consistency</div>One series label, one dark ground family, one Oxblood block. Counter and progress always match the slide count.</div>
-      <div><div class="cap acc" style="margin-bottom:.6em">Rhythm</div>Brand graphics on slides 1, 3, 5 and 6. Slides 2 and 4 stay clean so the UI reads.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Rhythm</div>Brand graphics on slides 1, 4, 6 and 7. Slides 2, 3 and 5 stay clean so the UI reads.</div>
     </div>
   </div>
 </section>
@@ -888,7 +956,7 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
 <section class="s" aria-label="Templates in context">
   <div class="bgx"><div class="ghost" style="width:60cqw;height:60cqw;left:20cqw;top:-8cqw;opacity:.035"><svg viewBox="0 0 30.78 30.78"><use href="#mk"/></svg></div></div>
   <div class="in">
-    <div class="lab"><b>//06</b> in the feed <span class="r">Social media post</span></div>
+    <div class="lab"><b>//07</b> in the feed <span class="r">Social media post</span></div>
     <div class="phones">
       <div>
         <div class="phone"><div class="notch"></div><div class="feed">
@@ -914,13 +982,15 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
 <!-- 06 variants -->
 <section class="s lt" aria-label="Format variants">
   <div class="in">
-    <div class="lab"><b>//06</b> formats &amp; variants</div>
-    <div class="shots" style="--n:5;grid-template-columns:1fr 1fr 1fr .62fr .62fr">
+    <div class="lab"><b>//07</b> formats &amp; variants</div>
+    <div class="shots" style="--n:7;grid-template-columns:1fr 1fr 1fr 1fr .62fr .62fr .62fr">
       <figure><img src="img/SQ-Cover.png" alt="Square cover" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 Cover</b>Single post</figcaption></figure>
       <figure><img src="img/SQ-CTA.png" alt="Square CTA" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 CTA</b>Closing post</figcaption></figure>
       <figure><img src="img/SQ-Announcement.png" alt="Square announcement on Bone" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 Update</b>Bone ground, rare</figcaption></figure>
+      <figure><img src="img/SQ-Niru.png" alt="Square Ask Niru post" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 Ask Niru</b>One exchange</figcaption></figure>
       <figure><img src="img/ST-Cover.png" alt="Story cover" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">9:16 Cover</b></figcaption></figure>
       <figure><img src="img/ST-CTA.png" alt="Story CTA" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">9:16 CTA</b></figcaption></figure>
+      <figure><img src="img/ST-Niru.png" alt="Story Ask Niru" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">9:16 Niru</b></figcaption></figure>
     </div>
   </div>
 </section>
@@ -928,10 +998,11 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
 <!-- 06 reels -->
 <section class="s" aria-label="Reel templates">
   <div class="in">
-    <div class="lab"><b>//06</b> reels <span class="r">1080 × 1920 · 30 fps</span></div>
+    <div class="lab"><b>//07</b> reels <span class="r">1080 × 1920 · 30 fps</span></div>
     <div class="reels">
       <figure class="shots" style="display:block"><video src="vid/R1.mp4" poster="img/R1-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R1 · 15 s</span><b>Walkthrough</b></figcaption></figure>
       <figure class="shots" style="display:block"><video src="vid/R2.mp4" poster="img/R2-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R2 · 8 s</span><b>Announcement</b></figcaption></figure>
+      <figure class="shots" style="display:block"><video src="vid/R4.mp4" poster="img/R4-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R4 · 11 s</span><b>Ask Niru</b></figcaption></figure>
       <figure class="shots" style="display:block"><video src="vid/R1-guides.mp4" poster="img/R1-guides-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R1 · overlay</span><b>Safe zones live</b></figcaption></figure>
       <div class="beats compact" style="display:grid;gap:max(12px, calc(24 * var(--u)))">
         <div class="tw"><table style="min-width:0">
@@ -962,7 +1033,7 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
 <!-- 06 components -->
 <section class="s" aria-label="Components">
   <div class="in">
-    <div class="lab"><b>//06</b> components <span class="r">Sizes on the 1080 artboard</span></div>
+    <div class="lab"><b>//07</b> components <span class="r">Sizes on the 1080 artboard</span></div>
     <div class="cmp">
       <div class="card"><h3>CTA button</h3><div class="demo"><span class="btn-s" style="font-size:max(13px, calc(26 * var(--u)))">Create your account <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div><div class="spec"><span class="mono">H 80 · r 999 · Bold 32 · Signal fill</span> Last slide and end card only. One per frame.</div></div>
       <div class="card"><h3>Counter + progress</h3><div class="demo" style="flex-direction:column;gap:14px"><span class="counter"><b>03</b><span style="margin:0 .4em;color:var(--line)">/</span>06</span><div class="prog"><i class="d"></i><i class="d"></i><i class="o"></i><i></i><i></i><i></i></div></div><div class="spec"><span class="mono">Counter H 44 · Progress H 4, gap 8</span> Z1 right and Z4 bottom. Carousels only.</div></div>
@@ -971,10 +1042,10 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
   </div>
 </section>
 
-<!-- ============ 07 CHECKLIST ============ -->
-<section class="s lt" id="s07" aria-label="Pre-publish checklist">
+<!-- ============ 08 CHECKLIST ============ -->
+<section class="s lt" id="s08" aria-label="Pre-publish checklist">
   <div class="in">
-    <div class="lab"><b>//07</b> before you post <span class="r" id="score">0 / 12 passed</span></div>
+    <div class="lab"><b>//08</b> before you post <span class="r" id="score">0 / 13 passed</span></div>
     <ol class="check" id="checklist-list">
       <li><label><input type="checkbox" id="c1"><span><b>Format.</b> 1080 × 1350, 1080 or 1920 artboard, exported at 2×.</span></label></li>
       <li><label><input type="checkbox" id="c2"><span><b>Margins.</b> Text and UI inside 72 px (9:16: 240 top, 420 bottom, 144 right).</span></label></li>
@@ -988,6 +1059,7 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
       <li><label><input type="checkbox" id="c10"><span><b>Icons.</b> One line style, exactly one Hero tile, Mint only for live states.</span></label></li>
       <li><label><input type="checkbox" id="c11"><span><b>Carousel.</b> One ground family, one Oxblood block, counter matches, CTA last.</span></label></li>
       <li><label><input type="checkbox" id="c12"><span><b>Reel.</b> Hook ≤ 2 s, end card ≥ 2 s, −14 LUFS, captions burned in.</span></label></li>
+      <li><label><input type="checkbox" id="c13"><span><b>Niru.</b> Real product copy, max 3 messages, no names, burgundy avatar, no blue orb.</span></label></li>
     </ol>
     <div><button class="btn" id="reset" type="button">Clear ticks</button> <span class="fs-xs" style="color:#6B6168;margin-left:.6em">Ticks are saved in this browser only.</span></div>
   </div>
@@ -1008,12 +1080,12 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
     <svg class="lgbig" viewBox="0 0 118.63 30.78" role="img" aria-label="Xiakra" style="width:max(150px, calc(300 * var(--u)));height:auto;aspect-ratio:118.63/30.78"><use href="#lg-dark"/></svg>
     <div class="grow"></div>
     <h2 class="fs-hero" style="font-size:max(44px, calc(190 * var(--u)))">Build, operate<br>and <span class="acc">connect.</span></h2>
-    <p class="fs-sm muted" style="max-width:60ch">Source: github.com/franzhiro/xiakra-social-system · Re-render: npm run render · Serve this deck: npm run serve</p>
+    <p class="fs-sm muted" style="max-width:60ch">Source: github.com/franzhiro/xiakra-social-system · Re-render: npm run render · Serve on your network: npm run serve</p>
   </div>
 </section>
 
 </main>
-<div class="foot"><span>Xiakra Social System v1.1 · Design · 23 Nov 2026</span><span>Xiakra Design</span></div>
+<div class="foot"><span>Xiakra Brand and Social Guidelines v1.2 · Design · 23 Nov 2026</span><span>Xiakra Design</span></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
