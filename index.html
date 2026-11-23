@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Xiakra brand and social guidelines: formats, logo, typography, colour, graphics and templates.">
+<title>Xiakra Brand and Social Guidelines</title>
+<style>
+/* Deck layout: a stack of 16:9 slides on a near-black desk, brand-book rhythm
+   (cover → story → numbered Oxblood openers → //0N content slides → end).
+   Every slide is a size container; 1 design px = var(--u) = 1/1920 of slide width,
+   with px floors so text stays readable when a slide reflows on phones. Single dark theme by design. */
+:root {
+  --desk: #070304;
+  --void: #0E0607;
+  --raised: #160A0C;
+  --panel: #1D0C0F;
+  --line: #3E282D;
+  --wine: #4F1725;
+  --oxblood: #8C1636;
+  --crimson: #BF1946;
+  --rose: #DB5975;
+  --ivory: #F6ECEE;
+  --mist: #BEA7AB;
+  --blush: #E8A6B4;
+  --bone: #EDEAE4;
+  --stone: #B7B0A8;
+  --ink: #17121A;
+  --mint: #6EE7B7;
+  --amber: #F79009;
+  --ok-ink: #17795A;
+  --no-ink: #B3123F;
+  --sans: 'Instrument Sans', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--desk); color: var(--ivory); font-family: var(--sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--desk); }
+
+/* top bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: rgba(7,3,4,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #241316; }
+.bar .wrap { max-width: 1640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; align-items: center; gap: 20px; height: 54px; }
+.bar svg.lg { height: 20px; width: 78px; flex: none; }
+.bar nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.bar nav::-webkit-scrollbar { display: none; }
+.bar nav a { font-size: 13px; font-weight: 500; color: var(--mist); text-decoration: none; white-space: nowrap; padding: 6px 10px; border-radius: 999px; }
+.bar nav a:hover, .bar nav a:focus-visible { color: var(--ivory); background: var(--panel); outline: none; }
+.bar nav a b { font-family: var(--mono); font-weight: 400; color: var(--rose); margin-right: 4px; font-size: 11px; }
+
+/* deck + slide */
+.deck { max-width: 1640px; margin: 0 auto; padding-top: 28px; padding-bottom: 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: clamp(16px, 2.2vw, 32px); }
+/* grid + aspect-ratio: the slide is 16:9 at rest and grows (never clips) if a phone reflows its content */
+.s { --u: calc(100cqw / 1920); position: relative; container-type: inline-size; aspect-ratio: 16 / 9; display: grid; border-radius: clamp(12px, 1.2vw, 22px); background: var(--void); color: var(--ivory); scroll-margin-top: 70px; min-width: 0; }
+.s > .bgx { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.s > .in { position: relative; z-index: 2; min-width: 0; padding: max(24px, calc(104 * var(--u))) max(20px, calc(120 * var(--u))); display: flex; flex-direction: column; gap: max(18px, calc(48 * var(--u))); }
+.s.lt { background: var(--bone); color: var(--ink); }
+.s.ox { background: var(--oxblood); }
+.s.lt .muted { color: #6B6168; }
+.muted { color: var(--mist); }
+
+/* type */
+.lab { font-size: max(17px, calc(44 * var(--u))); font-weight: 400; letter-spacing: -0.01em; line-height: 1.1; display: flex; align-items: baseline; gap: 0.35em; flex-wrap: wrap; }
+.lab b { color: var(--rose); font-weight: 500; }
+.s.lt .lab b { color: var(--oxblood); }
+.lab .r { margin-left: auto; font-size: max(11px, 0.6em); color: var(--mist); }
+.s.lt .lab .r { color: #6B6168; }
+.fs-hero { font-size: max(52px, calc(250 * var(--u))); line-height: 0.92; letter-spacing: -0.045em; font-weight: 400; margin: 0; }
+.fs-h { font-size: max(28px, calc(92 * var(--u))); line-height: 1.02; letter-spacing: -0.03em; font-weight: 500; margin: 0; text-wrap: balance; }
+.fs-lead { font-size: max(19px, calc(54 * var(--u))); line-height: 1.32; letter-spacing: -0.015em; font-weight: 400; margin: 0; text-wrap: pretty; }
+.fs-body { font-size: max(14px, calc(29 * var(--u))); line-height: 1.45; margin: 0; }
+.fs-sm { font-size: max(13px, calc(23 * var(--u))); line-height: 1.45; margin: 0; }
+.fs-xs { font-size: max(11px, calc(18 * var(--u))); line-height: 1.35; margin: 0; }
+.cap { font-size: max(11px, calc(19 * var(--u))); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.acc { color: var(--rose); }
+.acc-g { background-image: linear-gradient(90deg, var(--crimson), var(--rose)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.grow { flex: 1; min-height: 0; }
+
+/* decorations */
+.deco { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ghost { position: absolute; color: var(--rose); opacity: 0.055; }
+.ghost svg { width: 100%; height: 100%; display: block; }
+.coreC { position: absolute; display: block; }
+
+/* opener */
+.s.op > .in { justify-content: flex-end; gap: max(14px, calc(30 * var(--u))); }
+.op .num { position: absolute; right: calc(-60 * var(--u)); top: calc(-250 * var(--u)); font-size: calc(1500 * var(--u)); line-height: 1; font-weight: 400; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: max(1px, calc(4 * var(--u))) rgba(246,236,238,0.17); user-select: none; }
+.op .glow { position: absolute; width: 120cqw; height: 120cqw; left: 30cqw; top: -70cqw; border-radius: 50%; background: radial-gradient(closest-side, rgba(191,25,70,0.8), rgba(191,25,70,0)); }
+.op h2 { font-size: max(48px, calc(230 * var(--u))); line-height: 0.95; letter-spacing: -0.045em; font-weight: 400; margin: 0; text-transform: lowercase; }
+.op p { font-size: max(15px, calc(34 * var(--u))); line-height: 1.45; max-width: 52ch; color: rgba(246,236,238,0.88); margin: 0; }
+
+/* cover */
+.cover .lgbig { width: max(150px, calc(300 * var(--u))); height: auto; aspect-ratio: 118.63 / 30.78; }
+.pills { display: flex; flex-wrap: wrap; gap: max(8px, calc(16 * var(--u))); }
+.pill-o { font-size: max(11px, calc(24 * var(--u))); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rose); border: 1.5px solid rgba(219,89,117,0.45); border-radius: 999px; padding: 0.55em 1.2em; white-space: nowrap; }
+.tagv { display: inline-flex; vertical-align: top; font-size: max(12px, calc(26 * var(--u))); font-family: var(--mono); color: var(--rose); border: 1.5px solid rgba(219,89,117,0.45); border-radius: 999px; padding: 0.3em 0.8em; margin-left: 0.6em; letter-spacing: 0; transform: translateY(0.9em); }
+
+/* story table */
+.story { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); column-gap: max(20px, calc(80 * var(--u))); }
+.story > div { padding-block: max(12px, calc(30 * var(--u))); border-bottom: 1px solid rgba(246,236,238,0.1); }
+.story > div:nth-last-child(-n+2) { border-bottom: 0; }
+.story .k { color: var(--rose); font-size: max(17px, calc(40 * var(--u))); line-height: 1.2; }
+.story .v { font-size: max(15px, calc(34 * var(--u))); line-height: 1.38; }
+@container (max-width: 640px) { .story { grid-template-columns: 1fr; } .story > div.k { border-bottom: 0; padding-bottom: 4px; } }
+
+/* cols */
+.cols { display: grid; gap: max(14px, calc(40 * var(--u))); grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); align-items: start; }
+@container (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.card { border-radius: max(12px, calc(26 * var(--u))); padding: max(16px, calc(36 * var(--u))); background: rgba(246,236,238,0.04); border: 1px solid rgba(246,236,238,0.1); min-width: 0; }
+.s.lt .card { background: rgba(255,255,255,0.55); border-color: rgba(23,18,26,0.1); }
+.card h3 { font-size: max(17px, calc(38 * var(--u))); font-weight: 500; letter-spacing: -0.01em; margin: 0 0 0.5em; }
+ul.ru { list-style: none; padding: 0; margin: 0; display: grid; gap: max(6px, calc(14 * var(--u))); }
+ul.ru li { position: relative; padding-left: 1.3em; }
+ul.ru li::before { content: ""; position: absolute; left: 0.1em; top: 0.55em; width: 0.5em; height: 0.5em; border-radius: 50%; border: 1.5px solid var(--rose); }
+.s.lt ul.ru li::before { border-color: var(--oxblood); }
+
+/* formats */
+.fmts { display: flex; gap: max(16px, calc(64 * var(--u))); align-items: flex-end; flex-wrap: wrap; }
+.fmt { display: grid; gap: max(8px, calc(18 * var(--u))); flex: 0 1 auto; min-width: 0; }
+.fmt .fr { border-radius: max(6px, calc(14 * var(--u))); overflow: hidden; border: 1.5px solid rgba(23,18,26,0.18); box-shadow: 0 calc(30 * var(--u)) calc(80 * var(--u)) rgba(23,18,26,0.18); background: var(--void); }
+.fmt .fr img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fmt .dim { font-family: var(--mono); font-size: max(12px, calc(24 * var(--u))); color: var(--oxblood); }
+.fmt .nm { font-size: max(16px, calc(36 * var(--u))); font-weight: 500; letter-spacing: -0.01em; }
+.fmt .use { font-size: max(12px, calc(21 * var(--u))); color: #6B6168; max-width: 30ch; }
+
+/* tables */
+.tw { overflow-x: auto; border-radius: max(10px, calc(20 * var(--u))); border: 1px solid rgba(246,236,238,0.1); }
+.s.lt .tw { border-color: rgba(23,18,26,0.12); background: rgba(255,255,255,0.5); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: max(13px, calc(23 * var(--u))); }
+th, td { text-align: left; padding: max(8px, calc(16 * var(--u))) max(10px, calc(22 * var(--u))); border-bottom: 1px solid rgba(246,236,238,0.08); vertical-align: top; }
+.s.lt th, .s.lt td { border-bottom-color: rgba(23,18,26,0.08); }
+th { font-size: max(10px, calc(17 * var(--u))); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blush); }
+.s.lt th { color: var(--oxblood); }
+tr:last-child td { border-bottom: 0; }
+td.mono { font-size: 0.92em; white-space: nowrap; }
+
+/* images */
+.shots { display: grid; gap: max(12px, calc(32 * var(--u))); grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); align-items: start; }
+@container (max-width: 760px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.shots figure { margin: 0; min-width: 0; }
+.shots img, .shots video { width: 100%; display: block; border-radius: max(6px, calc(14 * var(--u))); border: 1px solid rgba(246,236,238,0.1); background: var(--void); }
+.shots figcaption { margin-top: max(6px, calc(14 * var(--u))); font-size: max(12px, calc(21 * var(--u))); color: var(--mist); }
+.shots figcaption b { color: var(--ivory); font-weight: 500; display: block; font-size: 1.12em; }
+.shots figcaption .id { font-family: var(--mono); color: var(--rose); font-size: 0.9em; }
+
+/* logo */
+.lgv { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 0; border-radius: max(10px, calc(18 * var(--u))); overflow: hidden; }
+.lgv > div { aspect-ratio: 16 / 7; display: flex; align-items: center; justify-content: center; }
+.lgv svg { width: 54%; height: auto; aspect-ratio: 118.63 / 30.78; }
+.lgv-cap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; font-size: max(11px, calc(20 * var(--u))); color: var(--mist); margin-top: max(8px, calc(14 * var(--u))); }
+@container (max-width: 640px) { .lgv svg { width: 74%; } }
+.clr { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: max(16px, calc(60 * var(--u))); align-items: center; }
+@container (max-width: 760px) { .clr { grid-template-columns: 1fr; } }
+.cs { position: relative; justify-self: center; padding: max(18px, calc(52 * var(--u))); outline: 2px dashed rgba(140,22,54,0.55); background: repeating-linear-gradient(45deg, rgba(140,22,54,0.05) 0 8px, transparent 8px 16px); }
+.cs .inner { background: var(--void); padding: max(14px, calc(36 * var(--u))); }
+.cs svg { width: max(170px, calc(420 * var(--u))); height: auto; aspect-ratio: 118.63 / 30.78; display: block; }
+.cs .t { position: absolute; font-family: var(--mono); font-size: max(11px, calc(18 * var(--u))); color: var(--oxblood); }
+
+/* do / don't */
+.dd { display: grid; grid-template-columns: 1fr 1fr; gap: max(14px, calc(36 * var(--u))); }
+@container (max-width: 760px) { .dd { grid-template-columns: 1fr; } }
+.dd .p { border-radius: max(12px, calc(26 * var(--u))); padding: max(16px, calc(30 * var(--u))); }
+.dd .do { background: #E3F4EC; }
+.dd .no { background: #F8E1E6; }
+.dd h3 { font-size: max(22px, calc(44 * var(--u))); font-weight: 500; margin: 0 0 max(10px, calc(18 * var(--u))); padding-bottom: max(10px, calc(18 * var(--u))); border-bottom: 1.5px solid currentColor; }
+.dd .do h3 { color: var(--ok-ink); }
+.dd .no h3 { color: var(--no-ink); }
+.dd .row { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr); gap: max(10px, calc(26 * var(--u))); align-items: center; padding-block: max(5px, calc(8 * var(--u))); }
+.dd .ex { aspect-ratio: 16 / 4.4; border-radius: max(6px, calc(12 * var(--u))); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.dd .ex svg { width: 66%; height: auto; aspect-ratio: 118.63 / 30.78; }
+.dd .tx { font-size: max(12px, calc(21 * var(--u))); color: #3D3540; }
+.dd .tx b { display: block; font-weight: 500; font-size: 1.18em; }
+.dd .do .tx b { color: var(--ok-ink); }
+.dd .no .tx b { color: var(--no-ink); }
+.dd .tx i { font-style: normal; font-family: var(--mono); font-size: 0.82em; opacity: 0.6; margin-right: 0.4em; }
+
+/* typography */
+.tyw { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: max(16px, calc(40 * var(--u))); align-items: end; }
+@container (max-width: 760px) { .tyw { grid-template-columns: 1fr; } }
+.aa { font-size: max(120px, calc(440 * var(--u))); line-height: 0.82; font-weight: 600; letter-spacing: -0.05em; }
+.fam { font-size: max(32px, calc(118 * var(--u))); color: var(--rose); letter-spacing: -0.03em; line-height: 1; margin-top: 0.15em; }
+.alpha { font-size: max(13px, calc(30 * var(--u))); letter-spacing: 0.14em; color: var(--mist); margin-top: 0.9em; line-height: 1.5; word-break: break-all; }
+.wts { display: grid; gap: max(6px, calc(14 * var(--u))); text-align: right; font-size: max(22px, calc(60 * var(--u))); line-height: 1.1; }
+@container (max-width: 760px) { .wts { text-align: left; } }
+.wts span { display: block; }
+.wts small { font-family: var(--mono); font-size: max(11px, 0.3em); color: var(--mist); margin-right: 0.8em; vertical-align: middle; font-weight: 400; }
+.hier { display: grid; grid-template-columns: max(90px, calc(320 * var(--u))) minmax(0, 1fr); column-gap: max(16px, calc(70 * var(--u))); row-gap: max(14px, calc(34 * var(--u))); align-items: baseline; }
+.hier .k { text-align: right; font-size: max(12px, calc(24 * var(--u))); color: #6B6168; }
+.hier .k span { display: block; font-family: var(--mono); font-size: 0.8em; color: var(--oxblood); }
+.eyb { display: inline-block; font-size: max(11px, calc(22 * var(--u))); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oxblood); border: 1.5px solid rgba(140,22,54,0.35); border-radius: 999px; padding: 0.5em 1.1em; }
+.hh { font-size: max(32px, calc(118 * var(--u))); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; color: var(--ink); }
+.hh em { font-style: normal; color: var(--oxblood); }
+.btn-s { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 700; font-size: max(14px, calc(30 * var(--u))); color: var(--ivory); background: linear-gradient(90deg, var(--oxblood), var(--crimson)); border-radius: 999px; padding: 0.75em 1.25em 0.75em 1.4em; }
+
+/* colour */
+.csplit { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-width: 0; position: relative; z-index: 2; }
+@container (max-width: 760px) { .csplit { grid-template-columns: 1fr; } }
+.csplit > div { padding: max(20px, calc(70 * var(--u))) max(16px, calc(64 * var(--u))); display: flex; flex-direction: column; gap: max(12px, calc(28 * var(--u))); }
+.csplit .lt-half { background: var(--bone); color: var(--ink); border-radius: inherit; }
+.ccols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: max(4px, calc(10 * var(--u))); flex: 1; min-height: max(260px, calc(640 * var(--u))); }
+.ccol { display: grid; grid-template-rows: auto 1fr repeat(4, max(18px, calc(52 * var(--u)))); min-width: 0; }
+.ccol .role { font-size: max(9px, calc(15 * var(--u))); letter-spacing: 0.08em; text-transform: uppercase; padding-bottom: max(6px, calc(10 * var(--u))); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ccol .big { padding: max(10px, calc(26 * var(--u))) max(8px, calc(18 * var(--u))); font-size: max(13px, calc(34 * var(--u))); font-family: var(--mono); text-align: center; }
+.ccol .st { font-family: var(--mono); font-size: max(9px, calc(15 * var(--u))); display: flex; align-items: center; justify-content: flex-end; padding: 0 max(6px, calc(12 * var(--u))); opacity: 0.85; white-space: nowrap; overflow: hidden; min-width: 0; }
+.ccol .big { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* equal-height artboard row (grid slide) */
+.eqh { display: flex; gap: max(10px, calc(32 * var(--u))); align-items: flex-start; flex-wrap: wrap; }
+.eqh figure { width: max(96px, calc(var(--ar) * 520 * var(--u))); flex: none; }
+/* compact tables (reels slide) */
+.compact table { font-size: max(12px, calc(19 * var(--u))); }
+.compact th, .compact td { padding: max(6px, calc(10 * var(--u))) max(8px, calc(16 * var(--u))); }
+.surf { font-size: max(10px, calc(16 * var(--u))); letter-spacing: 0.1em; text-transform: uppercase; }
+.sw-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, max(140px, calc(196 * var(--u)))), 1fr)); gap: max(8px, calc(16 * var(--u))); }
+.sw { border-radius: max(10px, calc(18 * var(--u))); overflow: hidden; border: 1px solid rgba(246,236,238,0.1); background: var(--raised); cursor: pointer; text-align: left; color: inherit; font: inherit; padding: 0; }
+.sw:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.sw .chip { height: max(56px, calc(92 * var(--u))); position: relative; }
+.sw .chip span { position: absolute; right: 0.7em; bottom: 0.5em; font-family: var(--mono); font-size: max(10px, calc(15 * var(--u))); }
+.sw .info { padding: max(8px, calc(16 * var(--u))) max(10px, calc(18 * var(--u))); display: grid; gap: 2px; }
+.sw .nm { font-weight: 600; font-size: max(13px, calc(24 * var(--u))); }
+.sw .hx { font-family: var(--mono); font-size: max(11px, calc(18 * var(--u))); }
+.sw .rl { font-size: max(11px, calc(18 * var(--u))); color: var(--mist); line-height: 1.35; }
+.ratio { display: flex; height: max(36px, calc(64 * var(--u))); border-radius: max(8px, calc(14 * var(--u))); overflow: hidden; border: 1px solid rgba(246,236,238,0.12); }
+.ratio div { display: flex; align-items: flex-end; padding: 0.4em 0.7em; font-family: var(--mono); font-size: max(10px, calc(17 * var(--u))); white-space: nowrap; overflow: hidden; }
+.grads { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: max(12px, calc(28 * var(--u))); flex: 1; }
+@container (max-width: 760px) { .grads { grid-template-columns: 1fr 1fr; } }
+.gr { border-radius: max(10px, calc(20 * var(--u))); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: max(170px, calc(560 * var(--u))); padding: max(12px, calc(26 * var(--u))); border: 1px solid rgba(246,236,238,0.1); }
+.gr .hx { font-family: var(--mono); font-size: max(10px, calc(18 * var(--u))); }
+.gr b { display: block; font-weight: 500; font-size: max(14px, calc(30 * var(--u))); }
+
+/* graphics */
+.trc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: max(12px, calc(32 * var(--u))); }
+@container (max-width: 760px) { .trc { grid-template-columns: 1fr; } }
+.trc .card { display: grid; gap: max(8px, calc(16 * var(--u))); }
+.trc .pv { aspect-ratio: 4 / 3; border-radius: max(8px, calc(16 * var(--u))); background: var(--void); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(246,236,238,0.08); }
+.trc .pv svg { width: 70%; height: 70%; }
+.trc .n { font-family: var(--mono); color: var(--rose); font-size: max(11px, calc(18 * var(--u))); }
+.corewrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: max(16px, calc(56 * var(--u))); align-items: center; flex: 1; }
+@container (max-width: 760px) { .corewrap { grid-template-columns: 1fr; } }
+.corewrap canvas { width: 100%; aspect-ratio: 1; display: block; max-width: max(260px, calc(760 * var(--u))); justify-self: center; }
+.icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(max(64px, calc(150 * var(--u))), 1fr)); gap: max(8px, calc(20 * var(--u))) max(6px, calc(12 * var(--u))); }
+.ic { display: grid; justify-items: center; gap: max(6px, calc(12 * var(--u))); font-family: var(--mono); font-size: max(10px, calc(16 * var(--u))); color: var(--mist); }
+.ic svg { width: max(28px, calc(64 * var(--u))); height: max(28px, calc(64 * var(--u))); }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: max(10px, calc(24 * var(--u))); }
+@container (max-width: 760px) { .tiles { grid-template-columns: 1fr 1fr; } }
+.tile { display: flex; gap: max(10px, calc(22 * var(--u))); align-items: center; }
+.tile .t { width: max(44px, calc(104 * var(--u))); height: max(44px, calc(104 * var(--u))); border-radius: 25%; flex: none; display: flex; align-items: center; justify-content: center; }
+.tile .t svg { width: 50%; height: 50%; }
+.tile .d { font-size: max(12px, calc(20 * var(--u))); color: var(--mist); }
+.tile .d b { display: block; color: var(--ivory); font-weight: 500; font-size: 1.2em; }
+
+/* in context: phones */
+.phones { display: flex; justify-content: center; align-items: flex-end; gap: max(14px, calc(70 * var(--u))); flex-wrap: wrap; flex: 1; }
+.phone { width: max(170px, calc(330 * var(--u))); aspect-ratio: 9 / 19; border-radius: max(24px, calc(60 * var(--u))); background: #050203; border: max(5px, calc(12 * var(--u))) solid #2A1A1D; box-shadow: 0 calc(40 * var(--u)) calc(120 * var(--u)) rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05); overflow: hidden; position: relative; display: flex; flex-direction: column; }
+.phone .notch { position: absolute; top: max(6px, calc(14 * var(--u))); left: 50%; transform: translateX(-50%); width: 30%; height: max(14px, calc(30 * var(--u))); background: #050203; border-radius: 999px; z-index: 3; }
+.phone .feed { padding-top: max(28px, calc(70 * var(--u))); display: flex; flex-direction: column; height: 100%; }
+.phone .hd { display: flex; align-items: center; gap: 0.5em; padding: 0.6em 0.8em; font-size: max(10px, calc(19 * var(--u))); font-weight: 600; }
+.phone .av { width: 2em; height: 2em; border-radius: 50%; background: var(--panel); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+.phone .av svg { width: 70%; height: 70%; }
+.phone .hd .dots { margin-left: auto; color: var(--mist); letter-spacing: 0.1em; }
+.phone .feed img { width: 100%; display: block; }
+.phone .acts { display: flex; gap: 0.9em; padding: 0.7em 0.8em; color: var(--ivory); }
+.phone .acts svg { width: max(14px, calc(30 * var(--u))); height: max(14px, calc(30 * var(--u))); }
+.phone .capt { padding: 0 0.8em; font-size: max(9px, calc(17 * var(--u))); color: var(--mist); line-height: 1.4; }
+.phone .capt b { color: var(--ivory); }
+.phone .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.phone .ui { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.phone .ui .bars { position: absolute; top: max(28px, calc(66 * var(--u))); left: 5%; right: 5%; display: flex; gap: 3px; }
+.phone .ui .bars i { flex: 1; height: 2px; border-radius: 1px; background: rgba(255,255,255,0.35); }
+.phone .ui .bars i:first-child { background: #fff; }
+.phone .ui .rail { position: absolute; right: 4%; bottom: 18%; display: grid; gap: max(10px, calc(26 * var(--u))); }
+.phone .ui .rail svg { width: max(16px, calc(34 * var(--u))); height: max(16px, calc(34 * var(--u))); }
+.phone-cap { text-align: center; font-size: max(12px, calc(21 * var(--u))); color: var(--mist); margin-top: max(8px, calc(16 * var(--u))); }
+.phone-cap b { display: block; color: var(--ivory); font-weight: 500; }
+
+/* components */
+.cmp { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: max(12px, calc(28 * var(--u))); }
+@container (max-width: 900px) { .cmp { grid-template-columns: 1fr 1fr; } }
+@container (max-width: 560px) { .cmp { grid-template-columns: 1fr; } }
+.cmp .card { display: grid; gap: max(8px, calc(16 * var(--u))); align-content: start; }
+.demo { min-height: max(72px, calc(150 * var(--u))); border-radius: max(8px, calc(14 * var(--u))); background: var(--void); border: 1px solid rgba(246,236,238,0.08); display: flex; align-items: center; justify-content: center; gap: 0.5em; flex-wrap: wrap; padding: max(10px, calc(20 * var(--u))); }
+.spec { font-size: max(11px, calc(18 * var(--u))); color: var(--mist); line-height: 1.45; }
+.spec .mono { color: var(--ivory); }
+.chipx { display: inline-flex; align-items: center; gap: 0.45em; font-size: max(11px, calc(20 * var(--u))); font-weight: 600; padding: 0.5em 0.85em; border-radius: 999px; background: var(--panel); border: 1.5px solid #3E1E23; white-space: nowrap; }
+.chipx .dot { width: 0.42em; height: 0.42em; border-radius: 50%; background: var(--mint); }
+.counter { display: inline-flex; align-items: center; height: max(26px, calc(46 * var(--u))); padding: 0 0.9em; border-radius: 999px; border: 1.5px solid var(--line); font-size: max(12px, calc(22 * var(--u))); color: var(--mist); font-variant-numeric: tabular-nums; }
+.counter b { color: var(--ivory); }
+.prog { display: flex; gap: 4px; width: 90%; }
+.prog i { flex: 1; height: 3px; border-radius: 2px; background: var(--line); }
+.prog i.d { background: var(--wine); }
+.prog i.o { background: linear-gradient(90deg, var(--oxblood), var(--crimson)); }
+
+/* reels */
+.reels { display: grid; grid-template-columns: repeat(3, minmax(0, 0.62fr)) minmax(0, 1.3fr); gap: max(12px, calc(32 * var(--u))); align-items: start; }
+@container (max-width: 900px) { .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); } .reels .beats { grid-column: 1 / -1; } }
+@container (max-width: 520px) { .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.reels video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; border-radius: max(8px, calc(16 * var(--u))); border: 1px solid rgba(246,236,238,0.1); background: var(--void); }
+
+/* checklist */
+.check { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: max(8px, calc(14 * var(--u))) max(12px, calc(28 * var(--u))); counter-reset: c; }
+@container (max-width: 760px) { .check { grid-template-columns: 1fr; } }
+.check li { counter-increment: c; }
+.check label { display: grid; grid-template-columns: auto 1fr; gap: max(10px, calc(18 * var(--u))); align-items: start; padding: max(10px, calc(18 * var(--u))) max(12px, calc(22 * var(--u))); border-radius: max(10px, calc(16 * var(--u))); background: rgba(255,255,255,0.6); border: 1px solid rgba(23,18,26,0.1); cursor: pointer; font-size: max(13px, calc(22 * var(--u))); }
+.check input { appearance: none; -webkit-appearance: none; width: max(20px, calc(32 * var(--u))); height: max(20px, calc(32 * var(--u))); border-radius: 30%; border: 1.5px solid rgba(23,18,26,0.3); background: #fff; margin: 0; display: grid; place-items: center; cursor: pointer; }
+.check input:checked { background: var(--oxblood); border-color: var(--oxblood); }
+.check input:checked::after { content: ""; width: 40%; height: 20%; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(5%, -20%); }
+.check input:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 2px; }
+.check b { font-weight: 600; }
+.check b::before { content: counter(c, decimal-leading-zero) "  "; font-family: var(--mono); color: var(--oxblood); font-weight: 400; }
+.btn { font: inherit; font-size: max(12px, calc(20 * var(--u))); font-weight: 600; color: var(--ink); background: #fff; border: 1px solid rgba(23,18,26,0.15); border-radius: 999px; padding: 0.5em 1em; cursor: pointer; }
+.btn:hover, .btn:focus-visible { border-color: var(--oxblood); outline: none; }
+
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ivory); color: var(--ink); font-weight: 600; font-size: 14px; padding: 10px 16px; border-radius: 999px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 20; }
+.toast.on { opacity: 1; }
+.foot { max-width: 1640px; margin: 0 auto; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); color: var(--mist); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<style>
+/* Local fonts (SIL OFL 1.1, see fonts/OFL-*.txt): no internet needed on the LAN */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/InstrumentSans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/InstrumentSans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/JetBrainsMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/JetBrainsMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/JetBrainsMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/JetBrainsMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg-dark" viewBox="0 0 118.63 30.78"><svg x="37.99" y="3.12" width="80.66" height="19.88" viewBox="0 0 80.66 19.88" overflow="visible">
+<g>
+<path d="M0 19.65L4.83 12.21L0 4.77H3.57L7.36 10.44L11.15 4.77H14.72L9.89 12.21L14.72 19.65H11.15L7.36 13.95L3.57 19.65H0Z" fill="#FBF6F7"/>
+<path d="M20.38 8.06C19.97 8.46 19.47 8.66 18.89 8.66C18.31 8.66 17.82 8.46 17.42 8.06C17.02 7.66 16.82 7.17 16.82 6.59C16.82 6.01 17.02 5.52 17.42 5.12C17.82 4.72 18.31 4.52 18.89 4.52C19.47 4.52 19.97 4.72 20.38 5.12C20.79 5.52 21 6.01 21 6.59C21 7.17 20.79 7.66 20.38 8.06ZM17.23 19.65V10.52H20.46V19.65H17.23Z" fill="#FBF6F7"/>
+<path d="M29 19.88C28.34 19.88 27.71 19.8 27.11 19.66C26.5 19.51 25.92 19.27 25.36 18.94C24.8 18.61 24.34 18.14 23.98 17.51C23.62 16.88 23.45 16.15 23.45 15.31C23.43 13.79 23.96 12.64 25.02 11.84C26.09 11.04 27.61 10.65 29.6 10.65H34.12V9.75C34.12 8.93 33.78 8.3 33.11 7.88C32.44 7.46 31.57 7.25 30.5 7.25C28.46 7.25 27.27 7.92 26.93 9.27L23.84 9.33C23.88 7.85 24.53 6.68 25.79 5.82C27.05 4.96 28.6 4.53 30.44 4.53C32.28 4.53 33.88 4.98 35.2 5.88C36.52 6.78 37.18 7.94 37.18 9.36V19.66H34.12V17.41C33.69 18.01 33.04 18.57 32.17 19.09C31.3 19.61 30.25 19.88 29.01 19.88H29ZM29.25 17.21C30.49 17.21 31.6 16.79 32.61 15.95C33.61 15.11 34.11 14.12 34.11 12.97H30.15C28.93 12.97 28.03 13.2 27.44 13.66C26.85 14.12 26.59 14.69 26.67 15.39C26.73 16.03 27.01 16.49 27.51 16.78C28.01 17.07 28.59 17.22 29.25 17.22V17.21Z" fill="#FBF6F7"/>
+<path d="M40.17 19.65V0H43.4V11.99L50.05 4.77H53.9L47.56 11.56L54.13 19.65H50.34L45.62 13.64L43.4 16.03V19.65H40.17Z" fill="#FBF6F7"/>
+<path d="M56.12 19.65V4.77H59.35V7.21C59.82 6.27 60.54 5.57 61.51 5.09C62.48 4.61 63.67 4.49 65.08 4.71V8.14C63.56 7.67 62.23 7.82 61.08 8.59C59.93 9.36 59.35 10.53 59.35 12.1V19.65H56.12Z" fill="#FBF6F7"/>
+<path d="M72.48 19.88C71.82 19.88 71.19 19.8 70.59 19.66C69.98 19.51 69.4 19.27 68.84 18.94C68.28 18.61 67.82 18.14 67.46 17.51C67.1 16.88 66.93 16.15 66.93 15.31C66.91 13.79 67.44 12.64 68.5 11.84C69.57 11.04 71.09 10.65 73.08 10.65H77.6V9.75C77.6 8.93 77.26 8.3 76.59 7.88C75.92 7.46 75.05 7.25 73.98 7.25C71.94 7.25 70.75 7.92 70.41 9.27L67.32 9.33C67.36 7.85 68.01 6.68 69.27 5.82C70.53 4.96 72.08 4.53 73.92 4.53C75.76 4.53 77.36 4.98 78.68 5.88C80 6.78 80.66 7.94 80.66 9.36V19.66H77.6V17.41C77.17 18.01 76.52 18.57 75.65 19.09C74.78 19.61 73.73 19.88 72.49 19.88H72.48ZM72.74 17.21C73.98 17.21 75.09 16.79 76.1 15.95C77.1 15.11 77.6 14.12 77.6 12.97H73.64C72.42 12.97 71.52 13.2 70.93 13.66C70.34 14.12 70.08 14.69 70.16 15.39C70.22 16.03 70.5 16.49 71 16.78C71.5 17.07 72.08 17.22 72.74 17.22V17.21Z" fill="#FBF6F7"/>
+</g>
+</svg><svg x="0" y="2.93" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M7.85 17.7L6.89 16.74L11.18 12.46L1.37 2.65L2.33 1.69L13.09 12.46L7.85 17.7Z" fill="#8C1636"/>
+<path d="M7.37 19.64C8.70653 19.64 9.79 18.5565 9.79 17.22C9.79 15.8835 8.70653 14.8 7.37 14.8C6.03347 14.8 4.95 15.8835 4.95 17.22C4.95 18.5565 6.03347 19.64 7.37 19.64Z" fill="#8C1636"/>
+<path d="M2.42 4.84C3.75653 4.84 4.84 3.75653 4.84 2.42C4.84 1.08347 3.75653 0 2.42 0C1.08347 0 0 1.08347 0 2.42C0 3.75653 1.08347 4.84 2.42 4.84Z" fill="#8C1636"/>
+</g>
+</svg><svg x="8.2" y="0" width="19.65" height="13.09" viewBox="0 0 19.65 13.09" overflow="visible">
+<g>
+<path d="M7.19 13.09L1.94 7.85L2.9 6.89L7.19 11.18L16.99 1.37L17.95 2.33L7.19 13.09Z" fill="#8C1636"/>
+<path d="M2.42 9.79C3.75653 9.79 4.84 8.70653 4.84 7.37C4.84 6.03347 3.75653 4.95 2.42 4.95C1.08347 4.95 0 6.03347 0 7.37C0 8.70653 1.08347 9.79 2.42 9.79Z" fill="#8C1636"/>
+<path d="M17.23 4.84C18.5665 4.84 19.65 3.75653 19.65 2.42C19.65 1.08347 18.5665 0 17.23 0C15.8935 0 14.81 1.08347 14.81 2.42C14.81 3.75653 15.8935 4.84 17.23 4.84Z" fill="#8C1636"/>
+</g>
+</svg><svg x="17.66" y="8.22" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M10.76 17.95L0 7.18L5.24 1.94L6.2 2.89L1.92 7.18L11.72 16.99L10.76 17.95Z" fill="#8C1636"/>
+<path d="M5.72 4.84C7.05653 4.84 8.14 3.75653 8.14 2.42C8.14 1.08347 7.05653 0 5.72 0C4.38347 0 3.3 1.08347 3.3 2.42C3.3 3.75653 4.38347 4.84 5.72 4.84Z" fill="#8C1636"/>
+<path d="M10.67 19.64C12.0065 19.64 13.09 18.5565 13.09 17.22C13.09 15.8835 12.0065 14.8 10.67 14.8C9.33347 14.8 8.25 15.8835 8.25 17.22C8.25 18.5565 9.33347 19.64 10.67 19.64Z" fill="#8C1636"/>
+</g>
+</svg><svg x="2.94" y="17.69" width="19.64" height="13.09" viewBox="0 0 19.64 13.09" overflow="visible">
+<g>
+<path d="M2.65 11.72L1.69 10.76L12.46 0L17.7 5.24L16.74 6.2L12.46 1.92L2.65 11.72Z" fill="#8C1636"/>
+<path d="M17.22 8.14C18.5565 8.14 19.64 7.05653 19.64 5.72C19.64 4.38347 18.5565 3.3 17.22 3.3C15.8835 3.3 14.8 4.38347 14.8 5.72C14.8 7.05653 15.8835 8.14 17.22 8.14Z" fill="#8C1636"/>
+<path d="M2.42 13.09C3.75653 13.09 4.84 12.0065 4.84 10.67C4.84 9.33347 3.75653 8.25 2.42 8.25C1.08347 8.25 0 9.33347 0 10.67C0 12.0065 1.08347 13.09 2.42 13.09Z" fill="#8C1636"/>
+</g>
+</svg></symbol><symbol id="lg-light" viewBox="0 0 118.63 30.78"><svg x="37.99" y="3.12" width="80.66" height="19.88" viewBox="0 0 80.66 19.88" overflow="visible">
+<g>
+<path d="M0 19.65L4.83 12.21L0 4.77H3.57L7.36 10.44L11.15 4.77H14.72L9.89 12.21L14.72 19.65H11.15L7.36 13.95L3.57 19.65H0Z" fill="#17121A"/>
+<path d="M20.38 8.06C19.97 8.46 19.47 8.66 18.89 8.66C18.31 8.66 17.82 8.46 17.42 8.06C17.02 7.66 16.82 7.17 16.82 6.59C16.82 6.01 17.02 5.52 17.42 5.12C17.82 4.72 18.31 4.52 18.89 4.52C19.47 4.52 19.97 4.72 20.38 5.12C20.79 5.52 21 6.01 21 6.59C21 7.17 20.79 7.66 20.38 8.06ZM17.23 19.65V10.52H20.46V19.65H17.23Z" fill="#17121A"/>
+<path d="M29 19.88C28.34 19.88 27.71 19.8 27.11 19.66C26.5 19.51 25.92 19.27 25.36 18.94C24.8 18.61 24.34 18.14 23.98 17.51C23.62 16.88 23.45 16.15 23.45 15.31C23.43 13.79 23.96 12.64 25.02 11.84C26.09 11.04 27.61 10.65 29.6 10.65H34.12V9.75C34.12 8.93 33.78 8.3 33.11 7.88C32.44 7.46 31.57 7.25 30.5 7.25C28.46 7.25 27.27 7.92 26.93 9.27L23.84 9.33C23.88 7.85 24.53 6.68 25.79 5.82C27.05 4.96 28.6 4.53 30.44 4.53C32.28 4.53 33.88 4.98 35.2 5.88C36.52 6.78 37.18 7.94 37.18 9.36V19.66H34.12V17.41C33.69 18.01 33.04 18.57 32.17 19.09C31.3 19.61 30.25 19.88 29.01 19.88H29ZM29.25 17.21C30.49 17.21 31.6 16.79 32.61 15.95C33.61 15.11 34.11 14.12 34.11 12.97H30.15C28.93 12.97 28.03 13.2 27.44 13.66C26.85 14.12 26.59 14.69 26.67 15.39C26.73 16.03 27.01 16.49 27.51 16.78C28.01 17.07 28.59 17.22 29.25 17.22V17.21Z" fill="#17121A"/>
+<path d="M40.17 19.65V0H43.4V11.99L50.05 4.77H53.9L47.56 11.56L54.13 19.65H50.34L45.62 13.64L43.4 16.03V19.65H40.17Z" fill="#17121A"/>
+<path d="M56.12 19.65V4.77H59.35V7.21C59.82 6.27 60.54 5.57 61.51 5.09C62.48 4.61 63.67 4.49 65.08 4.71V8.14C63.56 7.67 62.23 7.82 61.08 8.59C59.93 9.36 59.35 10.53 59.35 12.1V19.65H56.12Z" fill="#17121A"/>
+<path d="M72.48 19.88C71.82 19.88 71.19 19.8 70.59 19.66C69.98 19.51 69.4 19.27 68.84 18.94C68.28 18.61 67.82 18.14 67.46 17.51C67.1 16.88 66.93 16.15 66.93 15.31C66.91 13.79 67.44 12.64 68.5 11.84C69.57 11.04 71.09 10.65 73.08 10.65H77.6V9.75C77.6 8.93 77.26 8.3 76.59 7.88C75.92 7.46 75.05 7.25 73.98 7.25C71.94 7.25 70.75 7.92 70.41 9.27L67.32 9.33C67.36 7.85 68.01 6.68 69.27 5.82C70.53 4.96 72.08 4.53 73.92 4.53C75.76 4.53 77.36 4.98 78.68 5.88C80 6.78 80.66 7.94 80.66 9.36V19.66H77.6V17.41C77.17 18.01 76.52 18.57 75.65 19.09C74.78 19.61 73.73 19.88 72.49 19.88H72.48ZM72.74 17.21C73.98 17.21 75.09 16.79 76.1 15.95C77.1 15.11 77.6 14.12 77.6 12.97H73.64C72.42 12.97 71.52 13.2 70.93 13.66C70.34 14.12 70.08 14.69 70.16 15.39C70.22 16.03 70.5 16.49 71 16.78C71.5 17.07 72.08 17.22 72.74 17.22V17.21Z" fill="#17121A"/>
+</g>
+</svg><svg x="0" y="2.93" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M7.85 17.7L6.89 16.74L11.18 12.46L1.37 2.65L2.33 1.69L13.09 12.46L7.85 17.7Z" fill="#8C1636"/>
+<path d="M7.37 19.64C8.70653 19.64 9.79 18.5565 9.79 17.22C9.79 15.8835 8.70653 14.8 7.37 14.8C6.03347 14.8 4.95 15.8835 4.95 17.22C4.95 18.5565 6.03347 19.64 7.37 19.64Z" fill="#8C1636"/>
+<path d="M2.42 4.84C3.75653 4.84 4.84 3.75653 4.84 2.42C4.84 1.08347 3.75653 0 2.42 0C1.08347 0 0 1.08347 0 2.42C0 3.75653 1.08347 4.84 2.42 4.84Z" fill="#8C1636"/>
+</g>
+</svg><svg x="8.2" y="0" width="19.65" height="13.09" viewBox="0 0 19.65 13.09" overflow="visible">
+<g>
+<path d="M7.19 13.09L1.94 7.85L2.9 6.89L7.19 11.18L16.99 1.37L17.95 2.33L7.19 13.09Z" fill="#8C1636"/>
+<path d="M2.42 9.79C3.75653 9.79 4.84 8.70653 4.84 7.37C4.84 6.03347 3.75653 4.95 2.42 4.95C1.08347 4.95 0 6.03347 0 7.37C0 8.70653 1.08347 9.79 2.42 9.79Z" fill="#8C1636"/>
+<path d="M17.23 4.84C18.5665 4.84 19.65 3.75653 19.65 2.42C19.65 1.08347 18.5665 0 17.23 0C15.8935 0 14.81 1.08347 14.81 2.42C14.81 3.75653 15.8935 4.84 17.23 4.84Z" fill="#8C1636"/>
+</g>
+</svg><svg x="17.66" y="8.22" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M10.76 17.95L0 7.18L5.24 1.94L6.2 2.89L1.92 7.18L11.72 16.99L10.76 17.95Z" fill="#8C1636"/>
+<path d="M5.72 4.84C7.05653 4.84 8.14 3.75653 8.14 2.42C8.14 1.08347 7.05653 0 5.72 0C4.38347 0 3.3 1.08347 3.3 2.42C3.3 3.75653 4.38347 4.84 5.72 4.84Z" fill="#8C1636"/>
+<path d="M10.67 19.64C12.0065 19.64 13.09 18.5565 13.09 17.22C13.09 15.8835 12.0065 14.8 10.67 14.8C9.33347 14.8 8.25 15.8835 8.25 17.22C8.25 18.5565 9.33347 19.64 10.67 19.64Z" fill="#8C1636"/>
+</g>
+</svg><svg x="2.94" y="17.69" width="19.64" height="13.09" viewBox="0 0 19.64 13.09" overflow="visible">
+<g>
+<path d="M2.65 11.72L1.69 10.76L12.46 0L17.7 5.24L16.74 6.2L12.46 1.92L2.65 11.72Z" fill="#8C1636"/>
+<path d="M17.22 8.14C18.5565 8.14 19.64 7.05653 19.64 5.72C19.64 4.38347 18.5565 3.3 17.22 3.3C15.8835 3.3 14.8 4.38347 14.8 5.72C14.8 7.05653 15.8835 8.14 17.22 8.14Z" fill="#8C1636"/>
+<path d="M2.42 13.09C3.75653 13.09 4.84 12.0065 4.84 10.67C4.84 9.33347 3.75653 8.25 2.42 8.25C1.08347 8.25 0 9.33347 0 10.67C0 12.0065 1.08347 13.09 2.42 13.09Z" fill="#8C1636"/>
+</g>
+</svg></symbol><symbol id="lg-mono" viewBox="0 0 118.63 30.78"><svg x="37.99" y="3.12" width="80.66" height="19.88" viewBox="0 0 80.66 19.88" overflow="visible">
+<g>
+<path d="M0 19.65L4.83 12.21L0 4.77H3.57L7.36 10.44L11.15 4.77H14.72L9.89 12.21L14.72 19.65H11.15L7.36 13.95L3.57 19.65H0Z" fill="#FBF6F7"/>
+<path d="M20.38 8.06C19.97 8.46 19.47 8.66 18.89 8.66C18.31 8.66 17.82 8.46 17.42 8.06C17.02 7.66 16.82 7.17 16.82 6.59C16.82 6.01 17.02 5.52 17.42 5.12C17.82 4.72 18.31 4.52 18.89 4.52C19.47 4.52 19.97 4.72 20.38 5.12C20.79 5.52 21 6.01 21 6.59C21 7.17 20.79 7.66 20.38 8.06ZM17.23 19.65V10.52H20.46V19.65H17.23Z" fill="#FBF6F7"/>
+<path d="M29 19.88C28.34 19.88 27.71 19.8 27.11 19.66C26.5 19.51 25.92 19.27 25.36 18.94C24.8 18.61 24.34 18.14 23.98 17.51C23.62 16.88 23.45 16.15 23.45 15.31C23.43 13.79 23.96 12.64 25.02 11.84C26.09 11.04 27.61 10.65 29.6 10.65H34.12V9.75C34.12 8.93 33.78 8.3 33.11 7.88C32.44 7.46 31.57 7.25 30.5 7.25C28.46 7.25 27.27 7.92 26.93 9.27L23.84 9.33C23.88 7.85 24.53 6.68 25.79 5.82C27.05 4.96 28.6 4.53 30.44 4.53C32.28 4.53 33.88 4.98 35.2 5.88C36.52 6.78 37.18 7.94 37.18 9.36V19.66H34.12V17.41C33.69 18.01 33.04 18.57 32.17 19.09C31.3 19.61 30.25 19.88 29.01 19.88H29ZM29.25 17.21C30.49 17.21 31.6 16.79 32.61 15.95C33.61 15.11 34.11 14.12 34.11 12.97H30.15C28.93 12.97 28.03 13.2 27.44 13.66C26.85 14.12 26.59 14.69 26.67 15.39C26.73 16.03 27.01 16.49 27.51 16.78C28.01 17.07 28.59 17.22 29.25 17.22V17.21Z" fill="#FBF6F7"/>
+<path d="M40.17 19.65V0H43.4V11.99L50.05 4.77H53.9L47.56 11.56L54.13 19.65H50.34L45.62 13.64L43.4 16.03V19.65H40.17Z" fill="#FBF6F7"/>
+<path d="M56.12 19.65V4.77H59.35V7.21C59.82 6.27 60.54 5.57 61.51 5.09C62.48 4.61 63.67 4.49 65.08 4.71V8.14C63.56 7.67 62.23 7.82 61.08 8.59C59.93 9.36 59.35 10.53 59.35 12.1V19.65H56.12Z" fill="#FBF6F7"/>
+<path d="M72.48 19.88C71.82 19.88 71.19 19.8 70.59 19.66C69.98 19.51 69.4 19.27 68.84 18.94C68.28 18.61 67.82 18.14 67.46 17.51C67.1 16.88 66.93 16.15 66.93 15.31C66.91 13.79 67.44 12.64 68.5 11.84C69.57 11.04 71.09 10.65 73.08 10.65H77.6V9.75C77.6 8.93 77.26 8.3 76.59 7.88C75.92 7.46 75.05 7.25 73.98 7.25C71.94 7.25 70.75 7.92 70.41 9.27L67.32 9.33C67.36 7.85 68.01 6.68 69.27 5.82C70.53 4.96 72.08 4.53 73.92 4.53C75.76 4.53 77.36 4.98 78.68 5.88C80 6.78 80.66 7.94 80.66 9.36V19.66H77.6V17.41C77.17 18.01 76.52 18.57 75.65 19.09C74.78 19.61 73.73 19.88 72.49 19.88H72.48ZM72.74 17.21C73.98 17.21 75.09 16.79 76.1 15.95C77.1 15.11 77.6 14.12 77.6 12.97H73.64C72.42 12.97 71.52 13.2 70.93 13.66C70.34 14.12 70.08 14.69 70.16 15.39C70.22 16.03 70.5 16.49 71 16.78C71.5 17.07 72.08 17.22 72.74 17.22V17.21Z" fill="#FBF6F7"/>
+</g>
+</svg><svg x="0" y="2.93" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M7.85 17.7L6.89 16.74L11.18 12.46L1.37 2.65L2.33 1.69L13.09 12.46L7.85 17.7Z" fill="#FBF6F7"/>
+<path d="M7.37 19.64C8.70653 19.64 9.79 18.5565 9.79 17.22C9.79 15.8835 8.70653 14.8 7.37 14.8C6.03347 14.8 4.95 15.8835 4.95 17.22C4.95 18.5565 6.03347 19.64 7.37 19.64Z" fill="#FBF6F7"/>
+<path d="M2.42 4.84C3.75653 4.84 4.84 3.75653 4.84 2.42C4.84 1.08347 3.75653 0 2.42 0C1.08347 0 0 1.08347 0 2.42C0 3.75653 1.08347 4.84 2.42 4.84Z" fill="#FBF6F7"/>
+</g>
+</svg><svg x="8.2" y="0" width="19.65" height="13.09" viewBox="0 0 19.65 13.09" overflow="visible">
+<g>
+<path d="M7.19 13.09L1.94 7.85L2.9 6.89L7.19 11.18L16.99 1.37L17.95 2.33L7.19 13.09Z" fill="#FBF6F7"/>
+<path d="M2.42 9.79C3.75653 9.79 4.84 8.70653 4.84 7.37C4.84 6.03347 3.75653 4.95 2.42 4.95C1.08347 4.95 0 6.03347 0 7.37C0 8.70653 1.08347 9.79 2.42 9.79Z" fill="#FBF6F7"/>
+<path d="M17.23 4.84C18.5665 4.84 19.65 3.75653 19.65 2.42C19.65 1.08347 18.5665 0 17.23 0C15.8935 0 14.81 1.08347 14.81 2.42C14.81 3.75653 15.8935 4.84 17.23 4.84Z" fill="#FBF6F7"/>
+</g>
+</svg><svg x="17.66" y="8.22" width="13.09" height="19.64" viewBox="0 0 13.09 19.64" overflow="visible">
+<g>
+<path d="M10.76 17.95L0 7.18L5.24 1.94L6.2 2.89L1.92 7.18L11.72 16.99L10.76 17.95Z" fill="#FBF6F7"/>
+<path d="M5.72 4.84C7.05653 4.84 8.14 3.75653 8.14 2.42C8.14 1.08347 7.05653 0 5.72 0C4.38347 0 3.3 1.08347 3.3 2.42C3.3 3.75653 4.38347 4.84 5.72 4.84Z" fill="#FBF6F7"/>
+<path d="M10.67 19.64C12.0065 19.64 13.09 18.5565 13.09 17.22C13.09 15.8835 12.0065 14.8 10.67 14.8C9.33347 14.8 8.25 15.8835 8.25 17.22C8.25 18.5565 9.33347 19.64 10.67 19.64Z" fill="#FBF6F7"/>
+</g>
+</svg><svg x="2.94" y="17.69" width="19.64" height="13.09" viewBox="0 0 19.64 13.09" overflow="visible">
+<g>
+<path d="M2.65 11.72L1.69 10.76L12.46 0L17.7 5.24L16.74 6.2L12.46 1.92L2.65 11.72Z" fill="#FBF6F7"/>
+<path d="M17.22 8.14C18.5565 8.14 19.64 7.05653 19.64 5.72C19.64 4.38347 18.5565 3.3 17.22 3.3C15.8835 3.3 14.8 4.38347 14.8 5.72C14.8 7.05653 15.8835 8.14 17.22 8.14Z" fill="#FBF6F7"/>
+<path d="M2.42 13.09C3.75653 13.09 4.84 12.0065 4.84 10.67C4.84 9.33347 3.75653 8.25 2.42 8.25C1.08347 8.25 0 9.33347 0 10.67C0 12.0065 1.08347 13.09 2.42 13.09Z" fill="#FBF6F7"/>
+</g>
+</svg></symbol><symbol id="mk" viewBox="0 0 30.78 30.78"><g fill="currentColor"><path d="M7.85 20.63L6.89 19.67L11.18 15.39L1.37 5.58L2.33 4.62L13.09 15.39L7.85 20.63Z"/><circle cx="7.37" cy="20.15" r="2.42"/><circle cx="2.42" cy="5.35" r="2.42"/><path d="M15.39 13.09L10.14 7.85L11.1 6.89L15.39 11.18L25.19 1.37L26.15 2.33L15.39 13.09Z"/><circle cx="10.62" cy="7.37" r="2.42"/><circle cx="25.43" cy="2.42" r="2.42"/><path d="M28.42 26.17L17.66 15.4L22.9 10.16L23.86 11.11L19.58 15.4L29.38 25.21L28.42 26.17Z"/><circle cx="23.38" cy="10.64" r="2.42"/><circle cx="28.33" cy="25.44" r="2.42"/><path d="M5.59 29.41L4.63 28.45L15.4 17.69L20.64 22.93L19.68 23.89L15.4 19.61L5.59 29.41Z"/><circle cx="20.16" cy="23.41" r="2.42"/><circle cx="5.36" cy="28.36" r="2.42"/></g></symbol><symbol id="mk-ox" viewBox="0 0 30.78 30.78"><g fill="#8C1636"><path d="M7.85 20.63L6.89 19.67L11.18 15.39L1.37 5.58L2.33 4.62L13.09 15.39L7.85 20.63Z"/><circle cx="7.37" cy="20.15" r="2.42"/><circle cx="2.42" cy="5.35" r="2.42"/><path d="M15.39 13.09L10.14 7.85L11.1 6.89L15.39 11.18L25.19 1.37L26.15 2.33L15.39 13.09Z"/><circle cx="10.62" cy="7.37" r="2.42"/><circle cx="25.43" cy="2.42" r="2.42"/><path d="M28.42 26.17L17.66 15.4L22.9 10.16L23.86 11.11L19.58 15.4L29.38 25.21L28.42 26.17Z"/><circle cx="23.38" cy="10.64" r="2.42"/><circle cx="28.33" cy="25.44" r="2.42"/><path d="M5.59 29.41L4.63 28.45L15.4 17.69L20.64 22.93L19.68 23.89L15.4 19.61L5.59 29.41Z"/><circle cx="20.16" cy="23.41" r="2.42"/><circle cx="5.36" cy="28.36" r="2.42"/></g></symbol></defs></svg>
+
+<header class="bar">
+  <div class="wrap">
+    <svg class="lg" viewBox="0 0 118.63 30.78" role="img" aria-label="Xiakra"><use href="#lg-dark"/></svg>
+    <nav aria-label="Sections">
+      <a href="#story">Story</a>
+      <a href="#s01"><b>01</b>Formats</a>
+      <a href="#s02"><b>02</b>Logo</a>
+      <a href="#s03"><b>03</b>Type</a>
+      <a href="#s04"><b>04</b>Colour</a>
+      <a href="#s05"><b>05</b>Graphics</a>
+      <a href="#s06"><b>06</b>Templates</a>
+      <a href="#s07"><b>07</b>Checklist</a>
+    </nav>
+  </div>
+</header>
+
+<main class="deck">
+
+<!-- ============ COVER ============ -->
+<section class="s cover" aria-label="Cover">
+  <div class="bgx">
+    <div class="ghost" style="width:78cqw;height:78cqw;right:-20cqw;top:-14cqw"><svg viewBox="0 0 30.78 30.78"><use href="#mk"/></svg></div>
+    <canvas class="coreC" data-core="hero" style="width:54cqw;height:54cqw;right:-7cqw;top:-5cqw" aria-hidden="true"></canvas>
+  </div>
+  <div class="in">
+    <svg class="lgbig" viewBox="0 0 118.63 30.78" role="img" aria-label="Xiakra"><use href="#lg-dark"/></svg>
+    <div class="grow"></div>
+    <h1 class="fs-hero" style="font-size:max(44px, calc(196 * var(--u)))">Brand<br>and Social<br>Guidelines</h1>
+    <div class="pills"><span class="pill-o" style="font-family:var(--mono);letter-spacing:0;color:var(--ivory);border-color:rgba(246,236,238,.3)">v1.1</span><span class="pill-o">Formats</span><span class="pill-o">Logo</span><span class="pill-o">Typography</span><span class="pill-o">Colour</span><span class="pill-o">Graphics</span><span class="pill-o">Templates</span></div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="s" aria-label="Introduction">
+  <div class="bgx">
+    <svg class="deco" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMax slice" aria-hidden="true">
+      <defs><linearGradient id="ti1" gradientUnits="userSpaceOnUse" x1="0" y1="560" x2="420" y2="1080"><stop offset="0" stop-color="#BF1946"/><stop offset="1" stop-color="#8C1636"/></linearGradient>
+      <linearGradient id="ti2" gradientUnits="userSpaceOnUse" x1="1920" y1="600" x2="1500" y2="1080"><stop offset="0" stop-color="#DB5975"/><stop offset="1" stop-color="#BF1946"/></linearGradient></defs>
+      <path d="M-120 600 L250 970 L120 1100" fill="none" stroke="url(#ti1)" stroke-width="58"/>
+      <path d="M-120 692 L184 996" fill="none" stroke="#DB5975" stroke-opacity=".5" stroke-width="3"/>
+      <path d="M2040 590 L1650 980 L1760 1090" fill="none" stroke="url(#ti2)" stroke-width="58"/>
+      <path d="M1560 -10 L1930 360" fill="none" stroke="#DB5975" stroke-opacity=".45" stroke-width="3"/>
+    </svg>
+    <div class="ghost" style="width:46cqw;height:46cqw;left:-10cqw;top:18cqw;opacity:.04"><svg viewBox="0 0 30.78 30.78"><use href="#mk"/></svg></div>
+  </div>
+  <div class="in" style="justify-content:center;padding-left:max(20px, calc(560 * var(--u)))">
+    <p class="fs-lead">The <span class="acc">Xiakra Social System</span> sets how the agent console looks and sounds on every social platform.</p>
+    <p class="fs-lead">One grid, one typeface, one signal colour and two brand graphics. Every post, carousel and reel starts from a template, so the feed reads as one product: precise, calm and built for operators.</p>
+  </div>
+</section>
+
+<!-- ============ STORY / PRINCIPLES ============ -->
+<section class="s" id="story" aria-label="The Xiakra story">
+  <div class="bgx">
+    <svg class="deco" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
+      <defs><linearGradient id="ts1" gradientUnits="userSpaceOnUse" x1="1920" y1="0" x2="1500" y2="400"><stop offset="0" stop-color="#DB5975"/><stop offset="1" stop-color="#BF1946"/></linearGradient></defs>
+      <path d="M1500 -60 L1760 200 L2020 -60" fill="none" stroke="url(#ts1)" stroke-width="54"/>
+      <path d="M1380 -60 L1700 260" fill="none" stroke="#DB5975" stroke-opacity=".45" stroke-width="3"/>
+    </svg>
+    <div class="ghost" style="width:52cqw;height:52cqw;left:-16cqw;top:6cqw;opacity:.045"><svg viewBox="0 0 30.78 30.78"><use href="#mk"/></svg></div>
+  </div>
+  <div class="in" style="padding-left:max(20px, calc(360 * var(--u)))">
+    <h2 class="fs-h" style="color:var(--rose);font-weight:400">The Xiakra story</h2>
+    <div class="story">
+      <div class="k">The mark</div><div class="v">An X built from four circuit traces, each ending in a node. Agents, connected. Every brand graphic is cut from it.</div>
+      <div class="k">One idea per frame</div><div class="v">The headline states it, the visual proves it, the body adds one fact or nothing.</div>
+      <div class="k">Dark console, one signal</div><div class="v">Void is the ground. Crimson marks the single thing to look at, never more than 2 % of a frame.</div>
+      <div class="k">Show the product</div><div class="v">Content frames show real console UI. The Core, the Trace and the Network frame it; they never replace it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 OPENER ============ -->
+<section class="s ox op" id="s01" aria-label="Section 01 formats and grid">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">01</div></div>
+  <div class="in">
+    <h2>formats &amp; grid</h2>
+    <p>Three artboards cover every platform. Four fixed zones, a 72 px margin and one alignment rule hold every post together.</p>
+  </div>
+</section>
+
+<!-- 01 formats -->
+<section class="s lt" aria-label="Formats">
+  <div class="in">
+    <div class="lab"><b>//01</b> formats &amp; platforms <span class="r">Design at 1080 wide · export stills at 2×</span></div>
+    <div class="grow"></div>
+    <div class="fmts">
+      <div class="fmt" style="width:max(130px, calc(380 * var(--u)))"><div class="fr" style="aspect-ratio:4/5"><img src="img/C01-Cover.png" alt="4:5 template" loading="lazy"></div><span class="dim">1080 × 1350 · 4:5</span><span class="nm">Feed &amp; carousel</span><span class="use">Instagram feed + carousel, Facebook, LinkedIn image and PDF carousel, Threads. The default.</span></div>
+      <div class="fmt" style="width:max(120px, calc(304 * var(--u)))"><div class="fr" style="aspect-ratio:1/1"><img src="img/SQ-Cover.png" alt="1:1 template" loading="lazy"></div><span class="dim">1080 × 1080 · 1:1</span><span class="nm">Square</span><span class="use">X, LinkedIn single image, Facebook, square ads.</span></div>
+      <div class="fmt" style="width:max(110px, calc(242 * var(--u)))"><div class="fr" style="aspect-ratio:9/16"><img src="img/ST-Cover.png" alt="9:16 template" loading="lazy"></div><span class="dim">1080 × 1920 · 9:16</span><span class="nm">Reel &amp; story</span><span class="use">Reels, Stories, TikTok, Shorts, LinkedIn vertical video.</span></div>
+      <div class="card" style="flex:1 1 220px;align-self:stretch">
+        <h3>Export</h3>
+        <ul class="ru fs-sm">
+          <li>Stills: PNG-24, sRGB, 2× (2160 wide), no transparency.</li>
+          <li>LinkedIn carousel: 4:5 slides as one PDF, in order.</li>
+          <li>Video: MP4 H.264 High, yuv420p, 1080 × 1920, 30 fps, CRF 16.</li>
+          <li>Audio: AAC 48 kHz 320 kbps, −14 LUFS, peak −1 dBTP.</li>
+          <li>Never resize one format into another. Open its template.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 grid -->
+<section class="s" aria-label="Grid and zones">
+  <div class="in">
+    <div class="lab"><b>//01</b> grid &amp; zones <span class="r">72 margin · 6 columns · 24 gutter · 8 baseline</span></div>
+    <div style="display:flex;gap:max(16px, calc(56 * var(--u)));flex-wrap:wrap;align-items:flex-start">
+    <div class="shots eqh">
+      <figure style="--ar:.8"><img src="img/C01-Cover-guides.png" alt="4:5 grid overlay" loading="lazy"><figcaption><b>4:5</b>Z2 180 · Z3 680 · Z4 1222</figcaption></figure>
+      <figure style="--ar:1"><img src="img/SQ-Cover-guides.png" alt="1:1 grid overlay" loading="lazy"><figcaption><b>1:1</b>Z2 172 · Z3 560 · Z4 952</figcaption></figure>
+      <figure style="--ar:.5625"><img src="img/ST-Cover-guides.png" alt="9:16 grid overlay" loading="lazy"><figcaption><b>9:16</b>Platform UI: top 240, bottom 420, right 144</figcaption></figure>
+    </div>
+    <div class="fs-sm" style="flex:1 1 220px;display:grid;gap:max(14px, calc(34 * var(--u)))">
+      <div><div class="cap acc" style="margin-bottom:.6em">Zones</div>Z1 logo + counter. Z2 eyebrow, headline, body. Z3 one proof visual. Z4 series label, swipe cue, progress. Text lives only in Z2.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Alignment</div>Flush left on x 72. The closing CTA frame is the only centred layout. Never right-align or justify.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Spacing</div>8 · 16 · 24 · 32 · 48 · 64 · 96 only. Eyebrow → headline → body 32 apart. Card radius 28, padding 40–48.</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 OPENER ============ -->
+<section class="s ox op" id="s02" aria-label="Section 02 logo usage">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">02</div></div>
+  <div class="in">
+    <h2>logo usage</h2>
+    <p>The node-built X and the xiakra wordmark. Three approved versions, one position, fixed clear space.</p>
+  </div>
+</section>
+
+<!-- 02 versions -->
+<section class="s lt" aria-label="Logo versions">
+  <div class="in">
+    <div class="lab"><b>//02</b> logo versions <span class="r">Figma › Xiakra › Logo</span></div>
+    <div class="grow"></div>
+    <div>
+      <div class="lgv">
+        <div style="background:#FFFFFF"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Light-ground logo on white"><use href="#lg-light"/></svg></div>
+        <div style="background:#100609"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Dark-ground logo on Void"><use href="#lg-dark"/></svg></div>
+        <div style="background:#8C1636"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Mono logo on Oxblood"><use href="#lg-mono"/></svg></div>
+        <div style="background:#100609"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Dark-ground logo"><use href="#lg-dark"/></svg></div>
+        <div style="background:#EDEAE4"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Light-ground logo on Bone"><use href="#lg-light"/></svg></div>
+        <div style="background:#250912"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Mono logo on Wine"><use href="#lg-mono"/></svg></div>
+      </div>
+      <div class="lgv-cap" style="color:#6B6168"><span>Light ground · mark #8C1636, word #17121A</span><span>Dark ground · default · word #FBF6F7</span><span>Mono · all #FBF6F7</span></div>
+    </div>
+    <div class="grow"></div>
+  </div>
+</section>
+
+<!-- 02 size + clear space -->
+<section class="s lt" aria-label="Logo size and clear space">
+  <div class="in">
+    <div class="lab"><b>//02</b> logo size &amp; clear space</div>
+    <div class="clr grow">
+      <div class="cs">
+        <span class="t" style="left:8px;top:6px">½ H</span><span class="t" style="right:8px;bottom:6px">½ H</span>
+        <div class="inner"><svg viewBox="0 0 118.63 30.78" role="img" aria-label="Logo inside its clear space"><use href="#lg-dark"/></svg></div>
+      </div>
+      <div class="tw"><table style="min-width:0">
+        <thead><tr><th>Use</th><th>Lockup height</th></tr></thead>
+        <tbody>
+          <tr><td>Header · 4:5 and 1:1</td><td class="mono">36 px · 139 wide</td></tr>
+          <tr><td>Header · 9:16</td><td class="mono">44 px · 170 wide</td></tr>
+          <tr><td>Reel end card</td><td class="mono">104 px</td></tr>
+          <tr><td>Minimum on 1080</td><td class="mono">28 px</td></tr>
+          <tr><td>Clear space, all sides</td><td class="mono">½ × height</td></tr>
+          <tr><td>Position</td><td>Top-left in Z1, once per frame</td></tr>
+          <tr><td>Mark alone</td><td>Avatars and the app-icon tile only</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 do / don't -->
+<section class="s lt" aria-label="Logo do's and don'ts">
+  <div class="in">
+    <div class="lab"><b>//02</b> logo do's and don'ts</div>
+    <div class="dd">
+      <div class="p do"><h3>Do's</h3>
+        <div class="row"><div class="ex" style="background:#100609"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-dark"/></svg></div><div class="tx"><i>01</i><b>Use the approved versions</b>Dark, light or mono, matched to the ground.</div></div>
+        <div class="row"><div class="ex" style="background:#fff;outline:1.5px dashed rgba(23,121,90,.5);outline-offset:-10px"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="width:52%"><use href="#lg-light"/></svg></div><div class="tx"><i>02</i><b>Keep clear space</b>Half the lockup height on every side.</div></div>
+        <div class="row"><div class="ex" style="background:#8C1636"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-mono"/></svg></div><div class="tx"><i>03</i><b>Use mono on Oxblood</b>All-Ivory version on colour-block frames.</div></div>
+        <div class="row"><div class="ex" style="background:#EDEAE4"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-light"/></svg></div><div class="tx"><i>04</i><b>Ensure contrast</b>Light version on White or Bone only.</div></div>
+        <div class="row"><div class="ex" style="background:#0E0607;justify-content:flex-start;padding-left:8%"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="width:42%"><use href="#lg-dark"/></svg></div><div class="tx"><i>05</i><b>Place it top-left</b>Z1, x 72, one lockup per frame.</div></div>
+      </div>
+      <div class="p no"><h3>Don'ts</h3>
+        <div class="row"><div class="ex" style="background:#fff"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="filter:hue-rotate(205deg) saturate(1.6)"><use href="#lg-light"/></svg></div><div class="tx"><i>01</i><b>Don't recolour it</b>No blue, no gradients, no brand-off colours.</div></div>
+        <div class="row"><div class="ex" style="background:#fff"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="transform:scale(1.35,.7)"><use href="#lg-light"/></svg></div><div class="tx"><i>02</i><b>Don't distort it</b>Never stretch, squash, skew or rotate.</div></div>
+        <div class="row"><div class="ex" style="background:#fff;gap:6%"><svg viewBox="0 0 30.78 30.78" aria-hidden="true" style="width:16%;aspect-ratio:1"><use href="#mk-ox"/></svg><span style="font:600 max(15px, calc(40 * var(--u))) var(--sans);color:#17121A;letter-spacing:-.02em">Xiakra</span></div><div class="tx"><i>03</i><b>Don't rebuild it</b>Never retype the wordmark or move the mark.</div></div>
+        <div class="row"><div class="ex" style="background:#100609"><svg viewBox="0 0 118.63 30.78" aria-hidden="true" style="filter:drop-shadow(0 0 6px #DB5975) drop-shadow(0 0 14px #BF1946)"><use href="#lg-dark"/></svg></div><div class="tx"><i>04</i><b>Don't add effects</b>No glow, shadow, outline or blur on the logo.</div></div>
+        <div class="row"><div class="ex" style="background:url(img/C05-Proof.png) 30% 52%/220% no-repeat"><svg viewBox="0 0 118.63 30.78" aria-hidden="true"><use href="#lg-dark"/></svg></div><div class="tx"><i>05</i><b>Don't use busy grounds</b>Keep it off UI, numbers and dense network.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 OPENER ============ -->
+<section class="s ox op" id="s03" aria-label="Section 03 typography">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">03</div></div>
+  <div class="in">
+    <h2>typography</h2>
+    <p>One family, taken from the console UI. Weight and size do the work; colour marks one accent group per headline.</p>
+  </div>
+</section>
+
+<!-- 03 typeface -->
+<section class="s" aria-label="Typeface">
+  <div class="in">
+    <div class="lab"><b>//03</b> typography · Instrument Sans <span class="r">Google Fonts · SIL OFL</span></div>
+    <div class="tyw grow">
+      <div>
+        <div class="aa">Aa</div>
+        <div class="fam">Instrument Sans</div>
+        <div class="alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !@#$%&amp;*()</div>
+      </div>
+      <div class="wts">
+        <span style="font-weight:400"><small>400 · body</small>Regular</span>
+        <span style="font-weight:500"><small>500 · meta</small>Medium</span>
+        <span style="font-weight:600"><small>600 · headlines</small>SemiBold</span>
+        <span style="font-weight:700"><small>700 · buttons</small>Bold</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 hierarchy -->
+<section class="s lt" aria-label="Type hierarchy">
+  <div class="in">
+    <div class="lab"><b>//03</b> typography · hierarchy</div>
+    <div class="grow"></div>
+    <div class="hier">
+      <div class="k">Eyebrow<span>600 · 22 · +12%</span></div><div><span class="eyb">Agent Studio</span></div>
+      <div class="k">Headline<span>600 · 76 / 104 · −2.5%</span></div><div class="hh">Build <em>AI&nbsp;agents</em><br>that do real work.</div>
+      <div class="k">Body<span>400 · 32 / 45</span></div><div class="fs-body" style="color:#4A4148;max-width:44ch;font-size:max(15px, calc(34 * var(--u)))">Design agents, give them tools and knowledge, and ship them to the channels your team already uses.</div>
+      <div class="k">Button<span>700 · 32</span></div><div><span class="btn-s">Create your account <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    </div>
+    <div class="grow"></div>
+  </div>
+</section>
+
+<!-- 03 scale -->
+<section class="s" aria-label="Type scale">
+  <div class="in">
+    <div class="lab"><b>//03</b> typography · scale <span class="r">px on the 1080 artboard</span></div>
+    <div class="tw"><table>
+      <thead><tr><th>Role</th><th>4:5 · 1:1</th><th>9:16</th><th>Weight · tracking</th><th>Colour</th><th>Limit</th></tr></thead>
+      <tbody>
+        <tr><td>Display · cover</td><td class="mono">104 / 104</td><td class="mono">120 / 120</td><td class="mono">600 · −3%</td><td>Ivory + accent</td><td>3 lines · 18 ch</td></tr>
+        <tr><td>H1 · slide headline</td><td class="mono">76 / 80</td><td class="mono">88 / 92</td><td class="mono">600 · −2.5%</td><td>Ivory + accent</td><td>3 lines · 24 ch</td></tr>
+        <tr><td>H2 · card titles</td><td class="mono">44 / 52</td><td class="mono">44 / 52</td><td class="mono">600 · −1.5%</td><td>Ivory</td><td>1 line</td></tr>
+        <tr><td>Body</td><td class="mono">32 / 45</td><td class="mono">40 / 54</td><td class="mono">400 · 0</td><td>Mist</td><td>1 sentence · 3 lines</td></tr>
+        <tr><td>Eyebrow</td><td class="mono">22</td><td class="mono">26</td><td class="mono">600 · +12%</td><td>Blush</td><td>1–3 words, caps</td></tr>
+        <tr><td>Stat</td><td class="mono">260 / 234</td><td class="mono">220 / 198</td><td class="mono">600 · −4.5%</td><td>Ivory, unit Rose</td><td>1 number</td></tr>
+        <tr><td>Button</td><td class="mono">32</td><td class="mono">40</td><td class="mono">700 · 0</td><td>Ivory on Signal</td><td>Verb first</td></tr>
+        <tr><td>Caption · subtitles</td><td class="mono">—</td><td class="mono">46 / 56</td><td class="mono">600 · 0</td><td>Ivory on Void 72%</td><td>2 lines · 32 ch</td></tr>
+      </tbody>
+    </table></div>
+    <p class="fs-sm muted">Sentence case. One accent group per headline, 1–3 words, never split across lines. Nothing under 22 px. No italics, underline, outline text or text shadows.</p>
+  </div>
+</section>
+
+<!-- ============ 04 OPENER ============ -->
+<section class="s ox op" id="s04" aria-label="Section 04 colour">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">04</div></div>
+  <div class="in">
+    <h2>colour</h2>
+    <p>A closed palette taken from the console variables. Void carries the frame; Oxblood, Crimson and Rose are the signal, used sparingly.</p>
+  </div>
+</section>
+
+<!-- 04 colours split -->
+<section class="s" aria-label="Core colours on light and dark surfaces">
+  <div class="csplit">
+    <div class="lt-half">
+      <div class="lab"><b>//04</b> colours</div>
+      <div class="ccols" id="ramp-light"></div>
+      <div class="surf">Light surface · Bone</div>
+    </div>
+    <div>
+      <div class="lab" style="visibility:hidden" aria-hidden="true">.</div>
+      <div class="ccols" id="ramp-dark"></div>
+      <div class="surf muted">Dark surface · Void</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 full palette -->
+<section class="s" aria-label="Full palette">
+  <div class="in">
+    <div class="lab"><b>//04</b> full palette <span class="r">Click a swatch to copy its hex</span></div>
+    <div class="sw-row" id="swatches"></div>
+    <div>
+      <div class="cap muted" style="margin-bottom:.6em">Area ratio per frame</div>
+      <div class="ratio" role="img" aria-label="Void and Panel 70 percent, structure 20 percent, text 8 percent, signal 2 percent">
+        <div style="flex:70;background:#0E0607;color:#BEA7AB">Void + Panel 70%</div>
+        <div style="flex:20;background:#3E282D;color:#F6ECEE">Line · Wine · halo 20%</div>
+        <div style="flex:8;background:#F6ECEE;color:#17121A">Text 8%</div>
+        <div style="flex:2;background:#BF1946" title="Signal 2%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 gradients -->
+<section class="s" aria-label="Gradients and light">
+  <div class="in">
+    <div class="lab"><b>//04</b> gradients &amp; light</div>
+    <div class="grads">
+      <div class="gr" style="background:linear-gradient(135deg,#8C1636,#BF1946)"><span class="hx">#8C1636 → #BF1946</span><div><b>Signal fill</b><span class="fs-xs" style="opacity:.85">CTA button, active progress, hero tile, Trace.</span></div></div>
+      <div class="gr" style="background:#0E0607"><span class="hx muted">#BF1946 → #DB5975 · 90°</span><div><div class="acc-g" style="font-size:max(30px, calc(96 * var(--u)));font-weight:600;letter-spacing:-.03em;line-height:1">AI agents</div><b style="margin-top:.4em">Signal text</b><span class="fs-xs muted">Accent words only. Crimson start keeps 3.3 : 1 on Void.</span></div></div>
+      <div class="gr" style="background:radial-gradient(closest-side,rgba(140,22,54,.75),rgba(140,22,54,0)) center/130% 90% no-repeat,#0E0607"><span class="hx muted">#8C1636 50% → 0 · layer 48%</span><div><b>Core halo</b><span class="fs-xs muted">One per frame, behind Z3, ≈ 1.2 × canvas wide.</span></div></div>
+      <div class="gr" style="background:radial-gradient(circle at 50% 40%,rgba(219,89,117,.5) 0,rgba(219,89,117,0) 28%),#0E0607"><span class="hx muted">#DB5975 38% → 0</span><div><b>Agent glow</b><span class="fs-xs muted">Lit nodes: 110 glow · 20 ring · 7 core. Max 3 per frame.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 OPENER ============ -->
+<section class="s ox op" id="s05" aria-label="Section 05 graphic elements">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">05</div></div>
+  <div class="in">
+    <h2>graphic elements</h2>
+    <p>The Trace, the Core and the Network. All three come from the mark and the console, so the feed is recognisable before anyone reads a word.</p>
+  </div>
+</section>
+
+<!-- 05 trace -->
+<section class="s" aria-label="The Trace">
+  <div class="bgx">
+    <svg class="deco" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+      <defs><linearGradient id="tt1" gradientUnits="userSpaceOnUse" x1="1920" y1="700" x2="1560" y2="1080"><stop offset="0" stop-color="#BF1946"/><stop offset="1" stop-color="#8C1636"/></linearGradient></defs>
+      <path d="M1700 760 L1560 900 L1760 1100" fill="none" stroke="url(#tt1)" stroke-width="40"/>
+      <circle cx="1700" cy="760" r="71" fill="#BF1946"/>
+      <path d="M1647 706 L1507 846" fill="none" stroke="#DB5975" stroke-opacity=".5" stroke-width="3"/>
+    </svg>
+  </div>
+  <div class="in">
+    <div class="lab"><b>//05</b> the Trace <span class="r">Wordless brand graphic</span></div>
+    <div class="trc">
+      <div class="card"><div class="pv"><svg viewBox="0 0 30.78 30.78" aria-hidden="true" style="color:var(--rose)"><use href="#mk"/></svg></div><span class="n">01 · the mark</span><span class="fs-sm">Four circuit traces, 45° legs, each ending in a node.</span></div>
+      <div class="card"><div class="pv"><svg viewBox="-2 -2 34.78 34.78" aria-hidden="true"><g opacity=".14" style="color:#DB5975"><use href="#mk" width="30.78" height="30.78"/></g><path d="M2.42 5.35 L12.13 15.39 L7.37 20.15" fill="none" stroke="#DB5975" stroke-width="1.36"/><circle cx="2.42" cy="5.35" r="2.42" fill="#DB5975"/><circle cx="7.37" cy="20.15" r="2.42" fill="#DB5975"/></svg></div><span class="n">02 · one arm</span><span class="fs-sm">Stroke 1.36, node ⌀ 4.84. Node = 3.56 × stroke.</span></div>
+      <div class="card"><div class="pv"><svg viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="tt2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BF1946"/><stop offset="1" stop-color="#8C1636"/></linearGradient></defs><path d="M120 60 L250 190 L170 270 L140 300" fill="none" stroke="url(#tt2)" stroke-width="26"/><circle cx="120" cy="60" r="46" fill="#BF1946"/><path d="M86 94 L216 224" fill="none" stroke="#DB5975" stroke-opacity=".5" stroke-width="2"/></svg></div><span class="n">03 · the Trace</span><span class="fs-sm">The arm, scaled up and bled off an edge, plus a thin companion line.</span></div>
+    </div>
+    <div class="cols fs-sm" style="--n:3">
+      <div><div class="cap acc" style="margin-bottom:.6em">Geometry</div>45° legs only, one sharp elbow. Every visible end is a node. Stroke 24–36 on 1080. Companion: 6 % of stroke, offset 1.9 ×, Rose 50 %.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Colour</div>Signal fill on Void. Ivory or Void on Oxblood. Oxblood on Bone. Never Rose as the fill.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Placement</div>One per frame. Enters from an edge, elbow points in. Never crosses Z2 text; node ≥ 40 px clear of Z4. Not on dense UI slides.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 core + network -->
+<section class="s" aria-label="The Core and the Network">
+  <div class="in">
+    <div class="lab"><b>//05</b> the Core &amp; the Network <span class="r">From the Xiakra cover and login</span></div>
+    <div class="corewrap">
+      <canvas data-core="spec" aria-label="The Core: a rotating network sphere"></canvas>
+      <div style="display:grid;gap:max(14px, calc(36 * var(--u)))">
+        <div><h3 class="fs-h" style="font-size:max(24px, calc(64 * var(--u)));font-weight:400;margin-bottom:.3em">The Core</h3><p class="fs-sm muted">A sphere of connected agents: 240 nodes, 3 links each, depth-faded, 10 lit agents. Hero of covers, CTAs, the reel hook and the end card. One per frame. Radius 380 on 4:5, 300 on 1:1, 400 on 9:16, 150 on CTA. In motion it turns 0.18 rad/s, never faster. Chips may pin to it; body text may not sit on it.</p></div>
+        <div><h3 class="fs-h" style="font-size:max(24px, calc(64 * var(--u)));font-weight:400;margin-bottom:.3em">The Network</h3><p class="fs-sm muted">The approved login background. Lines Rose 16 % at 1.25 px, nodes Rose 42 %, about 70 nodes per 4:5 frame, max 3 lit agents. Drawn in Void on Oxblood colour-block frames. Darkest behind Z2, brightest behind Z3.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 icons -->
+<section class="s" aria-label="Iconography">
+  <div class="in">
+    <div class="lab"><b>//05</b> iconography <span class="r">24 grid · 1.5 stroke · round caps · Lucide geometry</span></div>
+    <div class="icons" id="iconGrid"></div>
+    <div class="tiles">
+      <div class="tile"><div class="t" style="background:#8C1636" data-icon="box" data-c="#F6ECEE"></div><div class="d"><b>Brand</b>Steps, tools. Oxblood + Ivory.</div></div>
+      <div class="tile"><div class="t" style="background:#1D0C0F;border:1.5px solid #3E282D" data-icon="database" data-c="#E8A6B4"></div><div class="d"><b>Quiet</b>Grids. Panel + Blush.</div></div>
+      <div class="tile"><div class="t" style="background:linear-gradient(135deg,#8C1636,#BF1946);box-shadow:0 0 34px rgba(219,89,117,.4)" data-icon="send" data-c="#F6ECEE"></div><div class="d"><b>Hero</b>Exactly one per frame.</div></div>
+      <div class="tile"><div class="t" style="background:#6EE7B7" data-icon="zap" data-c="#0E0607"></div><div class="d"><b>Live</b>Start, trigger, active only.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 OPENER ============ -->
+<section class="s ox op" id="s06" aria-label="Section 06 social templates">
+  <div class="bgx"><div class="glow"></div><div class="num" aria-hidden="true">06</div></div>
+  <div class="in">
+    <h2>social templates</h2>
+    <p>Six carousel slides, three formats and three reels. Swap the words and the proof; keep everything else.</p>
+  </div>
+</section>
+
+<!-- 06 carousel -->
+<section class="s" aria-label="Carousel template">
+  <div class="in">
+    <div class="lab"><b>//06</b> carousel <span class="r">4:5 · 6 slides · Agent Studio 101</span></div>
+    <div class="shots" style="--n:6">
+      <figure><img src="img/C01-Cover.png" alt="C01 cover" loading="lazy"><figcaption><span class="id">C01</span><b>Cover</b>Display headline, Core, Trace.</figcaption></figure>
+      <figure><img src="img/C02-Steps.png" alt="C02 steps" loading="lazy"><figcaption><span class="id">C02</span><b>Mechanism</b>H1, body, step list.</figcaption></figure>
+      <figure><img src="img/C03-Stages.png" alt="C03 stages on Oxblood" loading="lazy"><figcaption><span class="id">C03</span><b>Colour block</b>Oxblood ground, one per carousel.</figcaption></figure>
+      <figure><img src="img/C04-Tools.png" alt="C04 tools" loading="lazy"><figcaption><span class="id">C04</span><b>Detail</b>Up to 3 stacked cards.</figcaption></figure>
+      <figure><img src="img/C05-Proof.png" alt="C05 proof" loading="lazy"><figcaption><span class="id">C05</span><b>Proof</b>One stat, chips, Trace.</figcaption></figure>
+      <figure><img src="img/C06-CTA.png" alt="C06 call to action" loading="lazy"><figcaption><span class="id">C06</span><b>CTA</b>Centred: Core, H1, button.</figcaption></figure>
+    </div>
+    <div class="cols fs-sm" style="--n:3">
+      <div><div class="cap acc" style="margin-bottom:.6em">Sequence</div>Hook → mechanism → colour block → detail → proof → CTA. 3–10 slides allowed; 6 is standard.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Consistency</div>One series label, one dark ground family, one Oxblood block. Counter and progress always match the slide count.</div>
+      <div><div class="cap acc" style="margin-bottom:.6em">Rhythm</div>Brand graphics on slides 1, 3, 5 and 6. Slides 2 and 4 stay clean so the UI reads.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 in context -->
+<section class="s" aria-label="Templates in context">
+  <div class="bgx"><div class="ghost" style="width:60cqw;height:60cqw;left:20cqw;top:-8cqw;opacity:.035"><svg viewBox="0 0 30.78 30.78"><use href="#mk"/></svg></div></div>
+  <div class="in">
+    <div class="lab"><b>//06</b> in the feed <span class="r">Social media post</span></div>
+    <div class="phones">
+      <div>
+        <div class="phone"><div class="notch"></div><div class="feed">
+          <div class="hd"><span class="av"><svg viewBox="0 0 30.78 30.78" aria-hidden="true"><use href="#mk-ox"/></svg></span>xiakra<span class="dots">•••</span></div>
+          <img src="img/C01-Cover.png" alt="Cover in a feed">
+          <div class="acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/></svg></div>
+          <div class="capt"><b>xiakra</b> Six stages from idea to live agent. Swipe through Agent Studio 101.</div>
+        </div></div>
+        <div class="phone-cap"><b>Feed · 4:5</b>Slide 1 is the post</div>
+      </div>
+      <div>
+        <div class="phone"><div class="notch"></div><img class="full" src="img/ST-Cover.png" alt="Story cover"><div class="ui"><div class="bars"><i></i><i></i><i></i></div></div></div>
+        <div class="phone-cap"><b>Story · 9:16</b>Content clears the top 240</div>
+      </div>
+      <div>
+        <div class="phone"><div class="notch"></div><video class="full" src="vid/R1.mp4" poster="img/R1-poster.jpg" muted autoplay loop playsinline preload="metadata"></video><div class="ui"><div class="rail"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/></svg></div></div></div>
+        <div class="phone-cap"><b>Reel · 9:16</b>Right 144 stays clear for the rail</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 variants -->
+<section class="s lt" aria-label="Format variants">
+  <div class="in">
+    <div class="lab"><b>//06</b> formats &amp; variants</div>
+    <div class="shots" style="--n:5;grid-template-columns:1fr 1fr 1fr .62fr .62fr">
+      <figure><img src="img/SQ-Cover.png" alt="Square cover" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 Cover</b>Single post</figcaption></figure>
+      <figure><img src="img/SQ-CTA.png" alt="Square CTA" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 CTA</b>Closing post</figcaption></figure>
+      <figure><img src="img/SQ-Announcement.png" alt="Square announcement on Bone" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">1:1 Update</b>Bone ground, rare</figcaption></figure>
+      <figure><img src="img/ST-Cover.png" alt="Story cover" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">9:16 Cover</b></figcaption></figure>
+      <figure><img src="img/ST-CTA.png" alt="Story CTA" loading="lazy"><figcaption style="color:#6B6168"><b style="color:var(--ink)">9:16 CTA</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 06 reels -->
+<section class="s" aria-label="Reel templates">
+  <div class="in">
+    <div class="lab"><b>//06</b> reels <span class="r">1080 × 1920 · 30 fps</span></div>
+    <div class="reels">
+      <figure class="shots" style="display:block"><video src="vid/R1.mp4" poster="img/R1-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R1 · 15 s</span><b>Walkthrough</b></figcaption></figure>
+      <figure class="shots" style="display:block"><video src="vid/R2.mp4" poster="img/R2-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R2 · 8 s</span><b>Announcement</b></figcaption></figure>
+      <figure class="shots" style="display:block"><video src="vid/R1-guides.mp4" poster="img/R1-guides-poster.jpg" controls muted playsinline loop preload="metadata"></video><figcaption><span class="id">R1 · overlay</span><b>Safe zones live</b></figcaption></figure>
+      <div class="beats compact" style="display:grid;gap:max(12px, calc(24 * var(--u)))">
+        <div class="tw"><table style="min-width:0">
+          <thead><tr><th>R1 beat</th><th>Time</th><th>On screen</th></tr></thead>
+          <tbody>
+            <tr><td>Hook</td><td class="mono">0.0–2.2</td><td>Hook headline, Core turns, Trace draws</td></tr>
+            <tr><td>Beat 1</td><td class="mono">2.2–5.7</td><td>Step 01, agent card</td></tr>
+            <tr><td>Beat 2</td><td class="mono">5.7–9.7</td><td>Step 02, steps appear in order</td></tr>
+            <tr><td>Beat 3</td><td class="mono">9.7–12.7</td><td>Step 03, stat counts up</td></tr>
+            <tr><td>End card</td><td class="mono">12.7–15.0</td><td>Core, logo, CTA · hold ≥ 2 s</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tw"><table style="min-width:0">
+          <thead><tr><th>Motion token</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Enter / exit ease</td><td class="mono">(.22,1,.36,1) · (.64,0,.78,0)</td></tr>
+            <tr><td>Micro · element · panel · scene</td><td class="mono">5 · 10 · 14 · 18 f</td></tr>
+            <tr><td>Stagger · rise</td><td class="mono">2–3 f · 28 px</td></tr>
+            <tr><td>Core turn · Trace draw</td><td class="mono">0.18 rad/s · 22 f</td></tr>
+          </tbody>
+        </table></div>
+        <p class="fs-xs muted">Hook lands within 2 s. Text holds 1 s + 0.3 s per word. Cuts or rises only: no zoom past 1.06, spins, glitches or flashes. Templates ship silent; burn in captions for any VO.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 components -->
+<section class="s" aria-label="Components">
+  <div class="in">
+    <div class="lab"><b>//06</b> components <span class="r">Sizes on the 1080 artboard</span></div>
+    <div class="cmp">
+      <div class="card"><h3>CTA button</h3><div class="demo"><span class="btn-s" style="font-size:max(13px, calc(26 * var(--u)))">Create your account <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div><div class="spec"><span class="mono">H 80 · r 999 · Bold 32 · Signal fill</span> Last slide and end card only. One per frame.</div></div>
+      <div class="card"><h3>Counter + progress</h3><div class="demo" style="flex-direction:column;gap:14px"><span class="counter"><b>03</b><span style="margin:0 .4em;color:var(--line)">/</span>06</span><div class="prog"><i class="d"></i><i class="d"></i><i class="o"></i><i></i><i></i><i></i></div></div><div class="spec"><span class="mono">Counter H 44 · Progress H 4, gap 8</span> Z1 right and Z4 bottom. Carousels only.</div></div>
+      <div class="card"><h3>Chips</h3><div class="demo"><span class="chipx"><span class="dot"></span>Active</span><span class="chipx">v10</span><span class="chipx" style="color:#F79009;border-color:rgba(247,144,9,.55);background:rgba(247,144,9,.08)">Unpublished changes</span></div><div class="spec"><span class="mono">Panel · border #3E1E23 · 600 22–26</span> Status, versions, trust marks. Max 3 in a row.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 CHECKLIST ============ -->
+<section class="s lt" id="s07" aria-label="Pre-publish checklist">
+  <div class="in">
+    <div class="lab"><b>//07</b> before you post <span class="r" id="score">0 / 12 passed</span></div>
+    <ol class="check" id="checklist-list">
+      <li><label><input type="checkbox" id="c1"><span><b>Format.</b> 1080 × 1350, 1080 or 1920 artboard, exported at 2×.</span></label></li>
+      <li><label><input type="checkbox" id="c2"><span><b>Margins.</b> Text and UI inside 72 px (9:16: 240 top, 420 bottom, 144 right).</span></label></li>
+      <li><label><input type="checkbox" id="c3"><span><b>Logo.</b> Right version for the ground, top-left, 36 px (44 on 9:16), no effects.</span></label></li>
+      <li><label><input type="checkbox" id="c4"><span><b>Zones.</b> Text only in Z2, one proof in Z3, Z1 and Z4 untouched.</span></label></li>
+      <li><label><input type="checkbox" id="c5"><span><b>Alignment.</b> Flush left on x 72; only the CTA frame is centred.</span></label></li>
+      <li><label><input type="checkbox" id="c6"><span><b>Type.</b> Instrument Sans, sizes from the scale, sentence case, nothing under 22 px.</span></label></li>
+      <li><label><input type="checkbox" id="c7"><span><b>Accent.</b> One group per headline, 1–3 words, on one line.</span></label></li>
+      <li><label><input type="checkbox" id="c8"><span><b>Colour.</b> Palette only, signal ≤ 2 %, no blue or cyan light.</span></label></li>
+      <li><label><input type="checkbox" id="c9"><span><b>Graphics.</b> Max one Core and one Trace; Trace ends in a node and misses text.</span></label></li>
+      <li><label><input type="checkbox" id="c10"><span><b>Icons.</b> One line style, exactly one Hero tile, Mint only for live states.</span></label></li>
+      <li><label><input type="checkbox" id="c11"><span><b>Carousel.</b> One ground family, one Oxblood block, counter matches, CTA last.</span></label></li>
+      <li><label><input type="checkbox" id="c12"><span><b>Reel.</b> Hook ≤ 2 s, end card ≥ 2 s, −14 LUFS, captions burned in.</span></label></li>
+    </ol>
+    <div><button class="btn" id="reset" type="button">Clear ticks</button> <span class="fs-xs" style="color:#6B6168;margin-left:.6em">Ticks are saved in this browser only.</span></div>
+  </div>
+</section>
+
+<!-- ============ END ============ -->
+<section class="s" aria-label="End">
+  <div class="bgx">
+    <svg class="deco" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+      <defs><linearGradient id="te1" gradientUnits="userSpaceOnUse" x1="1920" y1="520" x2="1400" y2="1080"><stop offset="0" stop-color="#DB5975"/><stop offset="1" stop-color="#8C1636"/></linearGradient></defs>
+      <path d="M1640 560 L1380 820 L1660 1100" fill="none" stroke="url(#te1)" stroke-width="64"/>
+      <circle cx="1640" cy="560" r="114" fill="#BF1946"/>
+      <path d="M1580 500 L1320 760" fill="none" stroke="#DB5975" stroke-opacity=".5" stroke-width="3"/>
+    </svg>
+    <canvas class="coreC" data-core="end" style="width:34cqw;height:34cqw;right:24cqw;top:-6cqw;opacity:.9" aria-hidden="true"></canvas>
+  </div>
+  <div class="in">
+    <svg class="lgbig" viewBox="0 0 118.63 30.78" role="img" aria-label="Xiakra" style="width:max(150px, calc(300 * var(--u)));height:auto;aspect-ratio:118.63/30.78"><use href="#lg-dark"/></svg>
+    <div class="grow"></div>
+    <h2 class="fs-hero" style="font-size:max(44px, calc(190 * var(--u)))">Build, operate<br>and <span class="acc">connect.</span></h2>
+    <p class="fs-sm muted" style="max-width:60ch">Source: github.com/franzhiro/xiakra-social-system · Re-render: npm run render · Serve this deck: npm run serve</p>
+  </div>
+</section>
+
+</main>
+<div class="foot"><span>Xiakra Social System v1.1 · Design · 23 Nov 2026</span><span>Xiakra Design</span></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  /* ---------- icons ---------- */
+  const ICONS = {
+    zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+    box: '<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+    wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+    sliders: '<path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/>',
+    database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
+    flask: '<path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7M7 16h10"/>',
+    send: '<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+    activity: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+    shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+    key: '<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/>',
+    lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+    chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    book: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    sparkles: '<path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4M22 5h-4"/>',
+    play: '<polygon points="7 4 20 12 7 20 7 4"/>',
+    arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>'
+  };
+  const LABEL = {zap: 'start', box: 'agent', wrench: 'tools', sliders: 'configure', database: 'knowledge', flask: 'test', send: 'deploy', activity: 'monitor', shield: 'security', key: 'sso', lock: 'private', chat: 'chat', book: 'docs', sparkles: 'studio', play: 'run', arrow: 'next', check: 'done', users: 'team'};
+  const svg = (n, c, sw) => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw || 1.5}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
+  document.getElementById('iconGrid').innerHTML = Object.keys(ICONS).map(k => `<div class="ic">${svg(k, '#DB5975')}<span>${LABEL[k]}</span></div>`).join('');
+  document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = svg(el.dataset.icon, el.dataset.c, 1.75); });
+
+  /* ---------- colour ramps (light / dark split) ---------- */
+  const ramp = (role, hex, steps, txt) => `<div class="ccol"><div class="role">${role}</div><div class="big" style="background:${hex};color:${txt}">${hex}</div>${steps.map(([h, p]) => `<div class="st" style="background:${h};color:${txt}">${p} · ${h}</div>`).join('')}</div>`;
+  document.getElementById('ramp-light').innerHTML =
+    ramp('Brand', '#8C1636', [['#A3455E', '80'], ['#BA7386', '60'], ['#D1A2AF', '40'], ['#E8D0D7', '20']], '#F6ECEE') +
+    ramp('Accent', '#BF1946', [['#CC476B', '80'], ['#D97590', '60'], ['#E5A3B5', '40'], ['#F2D1DA', '20']], '#F6ECEE') +
+    ramp('Surface / text', '#0E0607', [['#3E3839', '80'], ['#6E6A6A', '60'], ['#9F9B9C', '40'], ['#CFCDCD', '20']], '#F6ECEE');
+  document.getElementById('ramp-dark').innerHTML =
+    ramp('Brand', '#8C1636', [['#70122B', '80'], ['#540D20', '60'], ['#380916', '40'], ['#1C040B', '20']], '#F6ECEE') +
+    ramp('Light', '#DB5975', [['#AF475E', '80'], ['#833546', '60'], ['#58242F', '40'], ['#2C1217', '20']], '#F6ECEE') +
+    ramp('Surface / text', '#F6ECEE', [['#C5BDBE', '80'], ['#948E8F', '60'], ['#625E5F', '40'], ['#312F30', '20']], '#17121A');
+  document.querySelectorAll('#ramp-light .role').forEach(r => r.style.color = '#6B6168');
+  document.querySelectorAll('#ramp-dark .role').forEach(r => r.style.color = '#BEA7AB');
+  document.querySelectorAll('#ramp-dark .ccol:last-child .st').forEach((r, i) => { r.style.color = i < 2 ? '#17121A' : '#F6ECEE'; });
+  document.querySelectorAll('#ramp-light .ccol .st').forEach((r, i) => { const col = Math.floor(i / 4), k = i % 4; if (k >= 2 || (col === 2 && k >= 1)) r.style.color = '#17121A'; });
+
+  /* ---------- swatches ---------- */
+  const SW = [
+    ['Void', '#0E0607', 'Base ground, ≥ 70 %', 'Ivory 17.3 : 1'], ['Panel', '#1D0C0F', 'Cards, chips, quiet tiles', 'Ivory 16.3 : 1'], ['Bone', '#EDEAE4', 'Light ground, rare', 'Ink 15.4 : 1'],
+    ['Line', '#3E282D', 'Borders, dividers', 'Structure'], ['Wine', '#4F1725', 'Secondary fills', 'Structure'],
+    ['Oxblood', '#8C1636', 'Primary fill, colour block', 'Ivory on it 8.0 : 1'], ['Crimson', '#BF1946', 'Accent start, Trace', '3.3 : 1 large'], ['Rose', '#DB5975', 'Light, glow, network', '5.4 : 1 on Void'],
+    ['Ivory', '#F6ECEE', 'Headlines', '17.3 : 1 on Void'], ['Mist', '#BEA7AB', 'Body, meta', '8.9 : 1 on Void'], ['Blush', '#E8A6B4', 'Eyebrows, accent on Oxblood', '4.6 : 1 on Oxblood'], ['Ink', '#17121A', 'Text on Bone', '15.4 : 1 on Bone'],
+    ['Mint', '#6EE7B7', 'Live / start states', 'Status'], ['Amber', '#F79009', 'Warnings', 'Status']
+  ];
+  const light = h => ['#EDEAE4', '#F6ECEE', '#BEA7AB', '#E8A6B4', '#6EE7B7', '#F79009', '#DB5975'].includes(h);
+  document.getElementById('swatches').innerHTML = SW.map(([n, h, role, c]) => `<button class="sw" type="button" data-hex="${h}" aria-label="Copy ${n} ${h}"><div class="chip" style="background:${h};${h === '#0E0607' ? 'box-shadow:inset 0 0 0 1px #3E282D' : ''}"><span style="color:${light(h) ? '#17121A' : '#F6ECEE'}">${c}</span></div><div class="info"><span class="nm">${n}</span><span class="hx">${h}</span><span class="rl">${role}</span></div></button>`).join('');
+  const toast = document.getElementById('toast'); let tt;
+  const say = m => { toast.textContent = m; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('on'), 1400); };
+  document.getElementById('swatches').addEventListener('click', e => {
+    const b = e.target.closest('.sw'); if (!b) return;
+    const hex = b.dataset.hex;
+    const p = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(hex) : Promise.reject();
+    p.then(() => say(`Copied ${hex}`)).catch(() => say(hex));
+  });
+
+  /* ---------- checklist ---------- */
+  const boxes = [...document.querySelectorAll('#checklist-list input')];
+  const KEY = 'xk-social-checklist-v1';
+  const score = () => { document.getElementById('score').textContent = `${boxes.filter(b => b.checked).length} / ${boxes.length} passed`; };
+  try { const s = JSON.parse(localStorage.getItem(KEY) || '[]'); boxes.forEach(b => { b.checked = s.includes(b.id); }); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(boxes.filter(b => b.checked).map(b => b.id))); } catch (e) {} };
+  boxes.forEach(b => b.addEventListener('change', () => { score(); save(); }));
+  document.getElementById('reset').addEventListener('click', () => { boxes.forEach(b => b.checked = false); score(); save(); say('Ticks cleared'); });
+  score();
+
+  /* ---------- the Core (same geometry as the Remotion component) ---------- */
+  const N = 240, g = Math.PI * (3 - Math.sqrt(5));
+  const P = []; for (let i = 0; i < N; i++) { const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), t = g * i; P.push([Math.cos(t) * r, y, Math.sin(t) * r]); }
+  const E = []; const seen = new Set();
+  P.forEach((a, i) => { P.map((b, j) => ({j, d: (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2})).filter(o => o.j !== i).sort((p, q) => p.d - q.d).slice(0, 3).forEach(({j}) => { const k = i < j ? i + '-' + j : j + '-' + i; if (!seen.has(k)) { seen.add(k); E.push([i, j]); } }); });
+  const LIT = new Set([7, 31, 58, 77, 102, 129, 151, 176, 203, 222]);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cores = [...document.querySelectorAll('canvas[data-core]')].map(cv => ({cv, ctx: cv.getContext('2d'), vis: true}));
+  const draw = (o, t) => {
+    const {cv, ctx} = o; const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return;
+    if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+    const R = Math.min(w, h) * 0.33, cx = w / 2, cy = h / 2, ay = 0.35 + t * 0.18, ax = -0.32;
+    let gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.5); gr.addColorStop(0, 'rgba(191,25,70,0.42)'); gr.addColorStop(0.55, 'rgba(140,22,54,0.2)'); gr.addColorStop(1, 'rgba(140,22,54,0)');
+    ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(cx, cy, R * 1.5, 0, 7); ctx.fill();
+    gr = ctx.createRadialGradient(cx - R * .16, cy - R * .24, 0, cx, cy, R); gr.addColorStop(0, 'rgba(58,10,24,0.95)'); gr.addColorStop(0.7, 'rgba(26,5,9,0.92)'); gr.addColorStop(1, 'rgba(14,6,7,0.9)');
+    ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fill();
+    const pr = P.map(([x, y, z]) => { const x1 = x * Math.cos(ay) + z * Math.sin(ay), z1 = -x * Math.sin(ay) + z * Math.cos(ay), y2 = y * Math.cos(ax) - z1 * Math.sin(ax), z2 = y * Math.sin(ax) + z1 * Math.cos(ax); return [cx + x1 * R, cy + y2 * R, z2]; });
+    E.forEach(([a, b]) => { const A = pr[a], B = pr[b], f = ((A[2] + B[2]) / 2 + 1) / 2; ctx.strokeStyle = `rgba(219,89,117,${0.08 + 0.55 * f ** 1.6})`; ctx.lineWidth = R * (0.0045 + 0.004 * f); ctx.beginPath(); ctx.moveTo(A[0], A[1]); ctx.lineTo(B[0], B[1]); ctx.stroke(); });
+    pr.forEach((p, i) => { const f = (p[2] + 1) / 2, lit = LIT.has(i) && p[2] > -0.2;
+      if (lit) { const gg = ctx.createRadialGradient(p[0], p[1], 0, p[0], p[1], R * .09); gg.addColorStop(0, `rgba(255,213,222,${.9 * f})`); gg.addColorStop(.35, `rgba(219,89,117,${.6 * f})`); gg.addColorStop(1, 'rgba(219,89,117,0)'); ctx.fillStyle = gg; ctx.beginPath(); ctx.arc(p[0], p[1], R * .09, 0, 7); ctx.fill(); }
+      ctx.fillStyle = lit ? `rgba(255,227,233,${.25 + .7 * f})` : `rgba(219,89,117,${.25 + .7 * f})`; ctx.beginPath(); ctx.arc(p[0], p[1], R * (0.006 + 0.008 * f) * (lit ? 1.8 : 1), 0, 7); ctx.fill(); });
+    gr = ctx.createRadialGradient(cx, cy, R * .86, cx, cy, R * 1.03); gr.addColorStop(0, 'rgba(219,89,117,0)'); gr.addColorStop(.85, 'rgba(219,89,117,0.45)'); gr.addColorStop(1, 'rgba(219,89,117,0)');
+    ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(cx, cy, R * 1.03, 0, 7); ctx.fill();
+  };
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { const o = cores.find(c => c.cv === e.target); if (o) o.vis = e.isIntersecting; })) : null;
+  cores.forEach(o => { if (io) io.observe(o.cv); draw(o, 0); });
+  if (!reduce) { const t0 = performance.now(); const loop = now => { const t = (now - t0) / 1000; cores.forEach(o => { if (o.vis) draw(o, t); }); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+  addEventListener('resize', () => cores.forEach(o => draw(o, 0)));
+})();
+</script>
+</body>
+</html>
